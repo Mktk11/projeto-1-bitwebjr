@@ -1,0 +1,20 @@
+/* Estilizando o site */
+
+/* Colocando a cor de fundo da mesma cor que a imagem */
+body{
+    background-color: hsl(240,100%,44%);
+    margin: 0px;
+}
+.layout{
+    margin: 10px;
+    border: 1px solid white;
+    display: inline-block;
+}
+#login{
+    background-color: lightgray;
+    margin: 50px;
+    padding: auto;
+    border-radius: 8px;
+    width: 480px;
+    height: 480px;
+}
