@@ -6,35 +6,96 @@
 }
 body{
     background-color: hsl(240,100%,44%);
-    /*margin: 0px;*/
+    padding: 100px;
 }
 img{
-    width: 480px;
-    height: 480px;
+    width: 60%;
+    height: 75%;
 }
 .layout{
+    width: 880px;
+    height: 680px;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    padding: auto;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     display: flex;
 }
-.item{
-    margin: auto;
-    border: 1px solid white;
-}
+
+/* Login da página */
+
+
 #login{
+    font-size: large;
+    margin: 2px;
     text-align: center;
-    margin-left: 200px;
-    margin: auto;
-    background-color: lightgray;
-    padding: auto;
+    background-color: rgb(226, 224, 224);
     border-radius: 8px;
-    width: 680px;
-    height: 380px;
+    width: 50%;
+    height: 60%;
+}
+#opcoes{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 45px;
+    left: 795px;
 }
 h1{
     text-align: center;
     color: hsl(240,100%,44%);
+}
+label{
+    font-size: small;
+    padding: 20px;
+    color: black;
+    margin-right: 95%;
+    text-transform: uppercase;
+}
+input{
+    padding: 2.5%;
+    width: 95%;
+    border-radius: 5px;
+    border: none; 
+}
+
+.formulario-login{
+    padding: 20px;
+    margin-bottom: 25px;
+}
+/* Botão da página de login */
+
+
+#botão{
+    display: flex;
+    justify-content: end;
+    margin: 10px;
+    margin-top: 35%;
+    height: 60px;
+}
+button{
+    background-color: rgb(78, 221, 78);
+    font-size: 20px;
+    color: black;
+    width: 40%;
+    height: 60%;
+    text-transform: uppercase;
+    margin-right: 10px;
+    border: none;
+}
+
+/* Media query */
+
+@media screen and (max-width: 1024px) {
+    .layout{
+        width: 680px;
+        height: 680px;
+    }
+    
+}
+@media screen and (max-width:1024) and (orientation: landscape) {
+    .layout{
+        width: 580px;
+        height: 480px;
+    }
 }
