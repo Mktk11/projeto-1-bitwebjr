@@ -3,6 +3,8 @@
 /* Colocando a cor de fundo da mesma cor que a imagem */
 *{
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 body{
     background-color: hsl(240,100%,44%);
@@ -34,38 +36,46 @@ img{
     width: 50%;
     height: 60%;
 }
-#opcoes{
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    right: 45px;
-    left: 795px;
-}
 h1{
+    margin: 10px;
     text-align: center;
     color: hsl(240,100%,44%);
 }
 label{
     font-size: small;
-    padding: 20px;
+    padding: 5px;
     color: black;
     margin-right: 95%;
     text-transform: uppercase;
 }
+.formulario-login{
+    padding: 20px;
+    margin: 10px;
+}
+i{
+    position: relative;
+    cursor: pointer;
+    right: 10px;
+}
 input{
+    margin: 10px 0 10px 0;
     padding: 2.5%;
     width: 95%;
     border-radius: 5px;
-    border: none; 
+    border: none;
+    outline: 0; 
 }
 
-.formulario-login{
-    padding: 20px;
-    margin-bottom: 25px;
-}
+
 /* Botão da página de login */
 
-
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    background-color: aqua;
+}
 #botão{
     display: flex;
     justify-content: end;
@@ -86,12 +96,23 @@ button{
 
 /* Media query */
 
-@media screen and (max-width: 1024px) {
+/*Small laptops a partir de 1100px */
+
+@media screen and (max-width: 1100px){
     .layout{
-        width: 680px;
-        height: 680px;
+        width: 635px;
+        height: 480px;
+        margin: 0 auto;
+        align-items: center;
     }
-    
+    #botão{
+        display: flex;
+        justify-content: end;
+        margin: 10px;
+        /*margin-top: 15%;*/
+        height: 50px;
+        width: 230px;
+    }
 }
 @media screen and (max-width:1024) and (orientation: landscape) {
     .layout{
