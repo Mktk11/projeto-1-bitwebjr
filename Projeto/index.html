@@ -1,29 +1,35 @@
-<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BitWeb - Projeto 1</title>
+    <!-- Ícones -->
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilos -->
+
     <link rel="stylesheet" href="css/estilo.css">
+
   </head>
   <body>
     <div class="layout">
-        <div class="item"><img src="imagens/logo.png"></div>
-        <div class="item" id="login">
+        <img src="imagens/logo.png" alt="BitWeb - Server">
+        <div id="login">
             <h1>Login</h1>
             <form action="" method="">
-                <div>
-                    <label for="Usuario">Usuário:</label>
-                    <input type="text" id="Usuario"/>
+                <div class="formulario-login">
+                    <label for="user">usuário<br></label>
+                    <input type="text" name="user" id="Usuario"/>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <label for="password">senha<br></label>
+                    <input type="password" name="password" id="Senha"/>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
-                <div>
-                    <label for="Senha">Senha:</label>
-                    <input type="text" id="Usuari"/>
-                </div>
-                <div>
-                    <button type="submit">
-                        Enviar
-                    </button>
+                <div id="botão">
+                    <button> <a href="home.html" target="_blank"><strong>Entrar</strong></a></button>
                 </div>
             </form>
         </div>
