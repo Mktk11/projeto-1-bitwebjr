@@ -1,40 +1,49 @@
 /* Estilizando o site */
 
-/* Colocando a cor de fundo da mesma cor que a imagem */
+/* Geral */
 *{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+/*Layout*/
+
 body{
+    background-color: hsl(240,100%,44%);;
+}
+#layout{
+    margin: 5% auto;
     background-color: hsl(240,100%,44%);
-    padding: 100px;
-}
-img{
-    width: 60%;
-    height: 75%;
-}
-.layout{
-    width: 880px;
-    height: 680px;
-    margin: 0 auto;
+    width: 70%;
+    height: 70%;
     align-items: center;
     justify-content: center;
-    /*border: 1px solid white;*/
+    border: 10px solid black;
+    border-radius: 8px;
     display: flex;
+    justify-content: space-between;
+}
+a{
+    margin: 0px auto;
+}
+img{
+    margin: 0px auto;
+    width: 75%;
+    height: 75%;
 }
 
 /* Login da página */
 
-
 #login{
+    margin: 0px auto;
+    width: 320px;
+    height: auto;
     font-size: large;
-    margin: 2px;
     text-align: center;
     background-color: rgb(226, 224, 224);
-    border-radius: 8px;
-    width: 50%;
-    height: 60%;
+    border-radius: 8px;   
 }
 h1{
     margin: 10px;
@@ -48,7 +57,7 @@ label{
     margin-right: 95%;
     text-transform: uppercase;
 }
-.formulario-login{
+#formulario-login{
     padding: 20px;
     margin: 10px;
 }
@@ -57,66 +66,115 @@ i{
     cursor: pointer;
     right: 10px;
 }
+#visivel{
+    display: none;
+}
+ul{
+    list-style: none;
+}
+#olho{
+    left: 110px;
+    bottom: 35px;
+}
+#password{
+    margin-right: 2%;
+}
 input{
     margin: 10px 0 10px 0;
     padding: 2.5%;
     width: 95%;
     border-radius: 5px;
-    border: none;
+    /*border: none;*/
     outline: 0; 
 }
 
-
 /* Botão da página de login */
-
-a{
-    text-decoration: none;
-    color: black;
-}
-a:hover{
-    background-color: aqua;
-}
-#botão{
-    display: flex;
-    justify-content: end;
-    margin: 10px;
-    margin-top: 35%;
-    height: 60px;
-}
-button{
+#formulario-login input[type="submit"]{
     background-color: rgb(78, 221, 78);
-    font-size: 20px;
+    font-size: 95%;
+    font-weight:bolder ;
     color: black;
     width: 40%;
-    height: 60%;
     text-transform: uppercase;
-    margin-right: 10px;
+    margin-left: 55%;
+    margin-top: 20%;
     border: none;
+    cursor: pointer;
 }
+
 
 /* Media query */
 
-/*Small laptops a partir de 1100px */
-
-@media screen and (max-width: 1100px){
-    .layout{
-        width: 635px;
-        height: 480px;
-        margin: 0 auto;
-        align-items: center;
+@media screen and (max-width:1024px){
+    #layout{
+        width: 90%;
+        height: 70%;
     }
-    #botão{
-        display: flex;
-        justify-content: end;
-        margin: 10px;
-        /*margin-top: 15%;*/
-        height: 50px;
-        width: 230px;
+    img{
+        width: 65%;
     }
 }
-@media screen and (max-width:1024) and (orientation: landscape) {
-    .layout{
-        width: 580px;
-        height: 480px;
+
+@media screen and (max-width:768px){
+    #layout{
+        margin: 5px auto;
+        width: 90%;
+        height: 90%;
+        overflow-x: hidden;
+    }
+    img{
+        width: 60%;
+        margin: auto 40px;
+    }
+    #login{
+        width: 420px;
+        margin: 0.5%;
+    }
+}
+
+@media screen and (max-width:650px){
+    body{
+        overflow-x: hidden;
+    }
+    #layout{
+        margin: 0px;
+        padding: 0px;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    img{
+        width: auto;
+        height: 100%;
+        margin: auto 35%;
+    }
+    a{
+        width: 80%;
+        border: none;
+        height: 30%;
+    }
+    #login{
+        margin: 2px auto 90% auto;
+        height: auto;
+        width: 90%;
+        flex: 2;
+    }
+    #olho{
+        left: 125px;
+    }
+}
+@media screen and (max-width:375px){
+    img{
+        height: 95%;
+    }
+    a{
+        height: 15%;
+    }
+    #login{
+        top: 80%;
+    }
+    #olho{
+        left: 90px;
     }
 }

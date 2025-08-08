@@ -13,27 +13,32 @@
 
     <link rel="stylesheet" href="css/estilo.css">
 
+    <!-- Javascript -->
+
+    <script src="js/scripts.js" defer></script>
+
   </head>
   <body>
-    <div class="layout">
+    <main id="layout">
+      <a href="#">
         <img src="imagens/logo.png" alt="BitWeb - Server">
-        <div id="login">
-            <h1>Login</h1>
-            <form action="" method="">
-                <div class="formulario-login">
-                    <label for="user">usuário<br></label>
-                    <input type="text" name="user" id="Usuario"/>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                    <label for="password">senha<br></label>
-                    <input type="password" name="password" id="Senha"/>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
-                <div id="botão">
-                    <button> <a href="home.html" target="_blank"><strong>Entrar</strong></a></button>
-                </div>
-            </form>
-        </div>
-    </div>
-    
+      </a>
+      <div id="login">
+          <h1>Login</h1>
+          <form id="form">
+              <div id="formulario-login">
+                  <label for="user">usuário<br></label>
+                  <input type="text" name="user" id="user"/>
+                  <i onclick="aparecer()" class="fa-solid fa-ellipsis-vertical"></i>
+                  <ul id="visivel" style="display: none;"><li>Cadastrar usuário</li></ul>
+                  <label for="password">senha<br></label>
+                  <input type="password" name="password" id="password"/>
+                  <i class="fas fa-eye" id="olho"></i>
+                  <span id="erroLogin" style="color: red; display: none;"></span><br>
+                  <input type="submit" id="botão-entrar" value="ENTRAR">
+              </div>
+          </form>
+      </div>
+    </main>
   </body>
 </html>
