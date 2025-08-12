@@ -2,42 +2,41 @@
 //Seleção de elementos
 
 const email = document.querySelector("#user");
-const pass = document.querySelector("#password");
+const senha = document.querySelector("#password");
 const validaForm = document.querySelector("#form");
-const menuOpcoes = document.querySelector("#olho");
-
+const visivelInvisivel = document.querySelector("#olho");
+const mudaTemabtn = document.querySelector("#change-theme");
+let spanErro = document.getElementById("erroLogin");
 
 //Funções
 function aparecer(){
-    let contador = 0
     let vermenu = document.getElementById("visivel");
-    if(vermenu.style.display === "none" && contador%2==0){
-        vermenu.style.display = "block"
-        contador = +contador
+    if(vermenu.style.display === "none"){
+        vermenu.style.display = "block";
+        vermenu.style.position = "relative";
     }
     else{
-        vermenu.style.display = "none"
-        contador = +contador
+        vermenu.style.display = "none";
     }
 
 }
 
-
-
 //Eventos
 //Muda a cor do input quando selecionado e quando não selecionado
-email.addEventListener("blur",(e) =>{
+user.addEventListener("blur",(e) =>{
     user.style.border = 'none'
 })
-email.addEventListener("focus",(e) =>{
-    user.style.border = '1px solid blue'
+user.addEventListener("focus",(e) =>{
+    user.style.border = '1px solid hsl(240,100%,44%)'
+    spanErro.style.display = "none";
 })
-password.addEventListener("blur",(e) =>{
-    pass.style.border = 'none'
+senha.addEventListener("blur",(e) =>{
+    senha.style.border = 'none'
 })
 
-password.addEventListener("focus",(e) =>{
-    pass.style.border = '1px solid blue'
+senha.addEventListener("focus",(e) =>{
+    senha.style.border = '1px solid hsl(240,100%,44%)'
+    spanErro.style.display = "none";
 })
 //valida o formulário
 validaForm.addEventListener("submit",(e) =>{
@@ -45,7 +44,7 @@ validaForm.addEventListener("submit",(e) =>{
 
     const usuario = email.value;
     const senha = password.value;
-    let spanErro = document.getElementById("erroLogin");
+    
 
     if(!usuario || !senha){
         spanErro.textContent = "Usuário ou senha incorretos.";
@@ -62,11 +61,17 @@ validaForm.addEventListener("submit",(e) =>{
 })
 
 //abre o olho e fecha na imagem
-menuOpcoes.addEventListener("click",function(){
+visivelInvisivel.addEventListener("click",function(){
     const type = password.type === "password" ? "text" : "password";
     password.type = type;
 
     this.classList.toggle("fa-eye");
     this.classList.toggle("fa-eye-slash");
 
+})
+
+//Muda o tema da página
+
+mudaTemabtn.addEventListener("change",function(){
+    document.body.classList.toggle("dark");
 })
