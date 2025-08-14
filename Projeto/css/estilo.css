@@ -15,6 +15,9 @@ html,body{
 input[type="checkbox"]{
     display: none;
 }
+#logo-cabecalho img{
+    width: 35%;
+}
 header{
     display: flex;
     justify-content: space-between;
@@ -57,7 +60,7 @@ header{
 .dark #layout{
     margin: 5% auto;
     background-color: hsl(240,100%,44%);
-    width: 70%;
+    width: 80%;
     height: 70%;
     align-items: center;
     justify-content: center;
@@ -67,9 +70,9 @@ header{
     justify-content: space-between;
 }
 .dark #login{
-    margin: 130px auto;
-    width: 320px;
-    height: 55%;
+    margin: 100px auto;
+    width: 50%;
+    height: 65%;
     font-size: large;
     text-align: center;
     background-color: rgb(226, 224, 224);
@@ -99,7 +102,7 @@ header{
 /*Layout*/
 #layout{
     margin: 5% auto;
-    width: 70%;
+    width: 80%;
     height: 70%;
     align-items: center;
     justify-content: center;
@@ -131,11 +134,12 @@ img{
     width: 50%;
     background-color: lightblue;
     display: flex;
+    border-radius: 15px;
 }
 #login{
-    margin: 130px auto;
-    width: 320px;
-    height: 55%;
+    margin: 100px auto;
+    width: 50%;
+    height: 65%;
     font-size: large;
     text-align: center;
     background-color: rgb(226, 224, 224);
@@ -186,6 +190,9 @@ h1{
     background-color: hsl(240, 38%, 82%);
     color: hsl(240,100%,44%);
 }
+span{
+    margin-top: 20px;
+}
 a{
     text-decoration: none;
     color: black;
@@ -206,13 +213,18 @@ a{
 
 
 /* Media query */
-
 @media screen and (max-width:1024px){
     #layout{
         width: 90%;
     }
     .dark #layout{
         width: 90%;
+    }
+    #login{
+        width: 70%;
+    }
+    .dark #login{
+        width: 70%;
     }
 
 }
@@ -232,6 +244,11 @@ a{
     #lado-login{
         width: 80%;
     }
+    #login{
+        width: 70%;
+        height: 65%;
+        margin: 15% auto;
+    }
     .dark #layout{
         width: 90%;
         overflow-x: hidden;
@@ -246,6 +263,11 @@ a{
     .dark #lado-login{
         width: 80%;
     }
+    .dark #login{
+        width: 70%;
+        height: 65%;
+        margin: 15% auto;
+    }
 }
 
 @media screen and (max-width:650px){
@@ -253,20 +275,23 @@ a{
         flex-direction: column;
         height: 80%;
     }
+    #logo-cabecalho img{
+        margin: 0px;
+    }
     #imagem-logo{
         width: 80%;
         height: 30%;
     }
     img{
-        width: 50%;
-        margin: auto 25%;
+        width: 40%;
+        margin: auto 30%;
     }
     a{
         margin: 0px auto;
     }
     #lado-login{
-        width: 90%;
-        height: 100%;
+        width: 80%;
+        height: 90%;
     }
     #login{
         width: 80%;
@@ -281,15 +306,15 @@ a{
         height: 30%;
     }
     .dark img{
-        width: 50%;
-        margin: auto 25%;
+        width: 40%;
+        margin: auto 30%;
     }
     .dark a{
         margin: 0px auto;
     }
     .dark #lado-login{
-        width: 90%;
-        height: 100%;
+        width: 80%;
+        height: 90%;
     }
     .dark #login{
         width: 80%;
@@ -298,17 +323,51 @@ a{
 
 
 }
-@media screen and (max-width:375px){
-    img{
-        height: 95%;
+@media screen and (max-width:425px){
+    #layout{
+        width: 100%;
+        height: 70%;
     }
-    a{
-        height: 15%;
+    #imagem-logo img{
+        visibility: hidden;
+    }
+    #lado-login{
+        position: absolute;
+        width: 95%;
+        height: 80%;
     }
     #login{
-        top: 80%;
+        position: absolute;
+        right: 35px;
+        bottom: 0.5pxpx;
+        width: 85%;
     }
-    #olho{
-        left: 90px;
+    .dark #layout{
+        width: 100%;
+        height: 70%;
+    }
+    .dark #imagem-logo img{
+        visibility: hidden;
+    }
+    .dark #lado-login{
+        position: absolute;
+        width: 95%;
+        height: 80%;
+    }
+    .dark #login{
+        position: absolute;
+        right: 35px;
+        bottom: 0.5pxpx;
+        width: 85%;
+    }
+}
+@media screen and (max-width:375px){
+    #login{
+        right: 10px;
+        width: 95%;
+    }
+    .dark #login{
+        right: 10px;
+        width: 95%;
     }
 }
