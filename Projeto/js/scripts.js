@@ -9,17 +9,7 @@ const mudaTemabtn = document.querySelector("#change-theme");
 let spanErro = document.getElementById("erroLogin");
 
 //Funções
-function aparecer(){
-    let vermenu = document.getElementById("visivel");
-    if(vermenu.style.display === "none"){
-        vermenu.style.display = "block";
-        vermenu.style.position = "relative";
-    }
-    else{
-        vermenu.style.display = "none";
-    }
 
-}
 
 //Eventos
 //Muda a cor do input quando selecionado e quando não selecionado
