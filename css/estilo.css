@@ -1,0 +1,375 @@
+/* Estilizando o site */
+
+/* Geral */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    transition: 0.3s;
+    background-color: hsl(200,85%,57%);
+    height: 100%;
+}
+input[type="checkbox"]{
+    display: none;
+}
+#logo-cabecalho img{
+    width: 35%;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(200,85%,57%);
+    box-shadow: 0.5px 0.5px 10px 0.5px #000;
+    padding: 1rem 2rem;
+    position: relative;
+}
+.fa-regular{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.fa-moon{
+    display: none;
+}
+/* Dark theme*/
+
+.dark{
+    background-color: hsl(240,100%,44%);
+}
+.dark header{
+    background-color: hsl(240,100%,44%);
+    color: #FFF;
+}
+.dark .fa-sun{
+    display: none;
+}
+.dark .fa-moon{
+    display: block;
+    color: #FFF;
+}
+.dark #imagem-logo{
+    width: 50%;
+    height: 100%;
+    background-color: hsl(240,100%,44%);
+    display: flex;
+    border-right: 1px solid hsl(240,100%,44%);
+}
+.dark #layout{
+    margin: 5% auto;
+    background-color: hsl(240,100%,44%);
+    width: 80%;
+    height: 580px;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid hsl(240,100%,44%);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.dark #login{
+    margin: 65px auto;
+    width: 320px;
+    height: 400px;
+    font-size: large;
+    text-align: center;
+    background-color: rgb(226, 224, 224);
+    border: 2px solid hsl(240,100%,44%);
+    border-radius: 8px;   
+}
+.dark #lado-login{
+    height: 100%;
+    width: 50%;
+    background-color: hsl(240, 90%, 33%);;
+    display: flex;
+}
+.dark .input-box i{
+    position: absolute;
+    color: #263238;
+    right: 41px;
+    bottom: 1px;
+    font-size: medium;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.dark h1{
+    margin: 10px;
+    text-align: center;
+    color: hsl(240,100%,44%);
+}
+/*Layout*/
+#layout{
+    min-width: 320px;
+    min-height: 320px;
+    margin: 5% auto;
+    width: 80%;
+    height: 580px;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid hsl(200,85%,57%);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+#imagem-logo{
+    width: 50%;
+    height: 100%;
+    background-color: hsl(200,85%,57%);
+    display: flex;
+    /*border-right: 1px solid rgb(0, 111, 148);*/
+}
+
+a{
+    margin: 20px auto;
+    text-decoration: none;
+}
+img{
+    margin: 0px auto;
+}
+
+/* Login da página */
+
+#lado-login{
+    height: 100%;
+    width: 50%;
+    background-color: lightblue;
+    display: flex;
+    border-radius: 15px;
+}
+#login{
+    margin: 65px auto;
+    width: 320px;
+    height: 400px;
+    font-size: large;
+    text-align: center;
+    background-color: rgb(226, 224, 224);
+    border: 2px solid hsl(200,85%,57%);
+    border-radius: 8px;   
+}
+h1{
+    margin: 10px;
+    text-align: center;
+    color: hsl(200,85%,57%);
+}
+#login label{
+    font-size: small;
+    padding: 30px;
+    color: black;
+    margin-right: 50%;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+}
+.input-box{
+    position: relative;
+    padding: 3.5px;
+    margin: 8px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+}
+.input-box input{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    border-radius: 8px;
+    outline: 0;
+}
+.input-box i{
+    position: absolute;
+    right: 41px;
+    bottom: 1px;
+    font-size: medium;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.input-box li{
+    list-style: none;
+}
+.input-box li:hover{
+    background-color: hsl(240, 38%, 82%);
+    color: hsl(240,100%,44%);
+}
+span{
+    margin-top: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#formulario-login input[type="submit"]{
+    background-color: rgb(78, 221, 78);
+    font-size: 95%;
+    font-weight:bolder ;
+    color: black;
+    width: 40%;
+    height: 10%;
+    text-transform: uppercase;
+    margin-left: 55%;
+    margin-top: 20%;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Media query */
+@media screen and (max-width:1024px){
+    #layout{
+        width: 90%;
+    }
+    .dark #layout{
+        width: 90%;
+    }
+    #login{
+        width: 70%;
+    }
+    .dark #login{
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width:768px){
+    #layout{
+        width: 90%;
+        overflow-x: hidden;
+    }
+    img{
+        width: 80%;
+        
+    }
+    #imagem-logo{
+        width: 50%;
+    }
+    #lado-login{
+        width: 80%;
+    }
+    #login{
+        width: 70%;
+        height: 65%;
+        margin: 15% auto;
+    }
+    .dark #layout{
+        width: 90%;
+        overflow-x: hidden;
+    }
+    .dark img{
+        width: 80%;
+        
+    }
+    .dark #imagem-logo{
+        width: 50%;
+    }
+    .dark #lado-login{
+        width: 80%;
+    }
+    .dark #login{
+        width: 70%;
+        height: 65%;
+        margin: 15% auto;
+    }
+}
+
+@media screen and (max-width:650px){
+    #layout{
+        flex-direction: column;
+        height: 75%;
+    }
+    #logo-cabecalho img{
+        margin: 0px;
+    }
+    #imagem-logo{
+        width: 80%;
+        height: 30%;
+    }
+    img{
+        width: 40%;
+        margin: auto 30%;
+    }
+    a{
+        margin: 0px auto;
+    }
+    #lado-login{
+        width: 80%;
+        height: 640px;
+    }
+    #login{
+        width: 80%;
+        height: 380px;
+    }
+    .dark #layout{
+        flex-direction: column;
+        height: 75%;
+    }
+    .dark #imagem-logo{
+        width: 80%;
+        height: 30%;
+    }
+    .dark img{
+        width: 40%;
+        margin: auto 30%;
+    }
+    .dark a{
+        margin: 0px auto;
+    }
+    .dark #lado-login{
+        width: 80%;
+        height: 640px;
+    }
+    .dark #login{
+        width: 80%;
+        height: 380px;
+    }
+
+
+}
+@media screen and (max-width:425px){
+    #layout{
+        width: 100%;
+        height: 70%;
+    }
+    #imagem-logo img{
+        visibility: hidden;
+    }
+    #lado-login{
+        position: absolute;
+        width: 95%;
+        height: 80%;
+    }
+    #login{
+        position: absolute;
+        right: 35px;
+        bottom: 0.5pxpx;
+        width: 85%;
+    }
+    .dark #layout{
+        width: 100%;
+        height: 70%;
+    }
+    .dark #imagem-logo img{
+        visibility: hidden;
+    }
+    .dark #lado-login{
+        position: absolute;
+        width: 95%;
+        height: 80%;
+    }
+    .dark #login{
+        position: absolute;
+        right: 35px;
+        bottom: 0.5pxpx;
+        width: 85%;
+    }
+}
+@media screen and (max-width:375px){
+    #login{
+        right: 10px;
+        width: 95%;
+    }
+    .dark #login{
+        right: 10px;
+        width: 95%;
+    }
+}
