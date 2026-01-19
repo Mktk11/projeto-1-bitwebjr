@@ -24,10 +24,9 @@ visivelInvisivel.addEventListener("click",function(){
         password.type = "password";
     }
     
-    this.classList.toggle("fa-eye-slash");
     this.classList.toggle("fa-eye");
+    this.classList.toggle("fa-eye-slash");
 })
-
 // Válida o formulário
 
 function validaForm(){
@@ -67,3 +66,4 @@ function chamaPagina(num){
     });
 
 }
+
