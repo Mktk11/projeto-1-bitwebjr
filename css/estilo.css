@@ -1,375 +1,173 @@
-/* Estilizando o site */
+@import url("_basico.css");
 
-/* Geral */
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Animação depois que muda tema */
 html,body{
-    transition: 0.3s;
-    background-color: hsl(200,85%,57%);
+    transition: 0.5s;
     height: 100%;
 }
-input[type="checkbox"]{
-    display: none;
+main{
+    transition: 0.5s ease;
 }
-#logo-cabecalho img{
-    width: 35%;
+nav > div > a > img{
+    transition: 0.5s;
 }
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: hsl(200,85%,57%);
-    box-shadow: 0.5px 0.5px 10px 0.5px #000;
-    padding: 1rem 2rem;
-    position: relative;
+nav > div > a > img:hover{
+    transform: translateX(-5px);
+    transform: translateX(5px);
 }
-.fa-regular{
-    font-size: 1.3rem;
-    cursor: pointer;
+/* Temas Light */
+.light nav{
+    box-shadow: 2px 0 10px var(--mais-escuro);
 }
-.fa-moon{
-    display: none;
-}
+
 /* Dark theme*/
-
-.dark{
-    background-color: hsl(240,100%,44%);
-}
 .dark header{
-    background-color: hsl(240,100%,44%);
+    background-color: var(--escuro);
     color: #FFF;
 }
-.dark .fa-sun{
-    display: none;
+.dark main{
+    background-color: var(--mais-escuro);
+    background: linear-gradient(180deg,darkblue,var(--mais-escuro),var(--escuro));
+    border-radius: 20px;
+    border: 1px solid var(--mais-escuro);
 }
-.dark .fa-moon{
-    display: block;
-    color: #FFF;
-}
-.dark #imagem-logo{
-    width: 50%;
-    height: 100%;
-    background-color: hsl(240,100%,44%);
-    display: flex;
-    border-right: 1px solid hsl(240,100%,44%);
-}
-.dark #layout{
-    margin: 5% auto;
-    background-color: hsl(240,100%,44%);
-    width: 80%;
-    height: 580px;
-    align-items: center;
-    justify-content: center;
-    border: 8px solid hsl(240,100%,44%);
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-}
-.dark #login{
-    margin: 65px auto;
-    width: 320px;
-    height: 400px;
-    font-size: large;
-    text-align: center;
-    background-color: rgb(226, 224, 224);
-    border: 2px solid hsl(240,100%,44%);
-    border-radius: 8px;   
-}
-.dark #lado-login{
-    height: 100%;
-    width: 50%;
-    background-color: hsl(240, 90%, 33%);;
-    display: flex;
-}
-.dark .input-box i{
-    position: absolute;
-    color: #263238;
-    right: 41px;
-    bottom: 1px;
-    font-size: medium;
+
+/* Navegação topo */
+li > label > .fa-solid{
     cursor: pointer;
-    opacity: 0.6;
+    font-size: 2rem;
 }
-.dark h1{
-    margin: 10px;
-    text-align: center;
-    color: hsl(240,100%,44%);
+.dark nav{
+    box-shadow: 2px 0 10px var(--mais-claro);
 }
-/*Layout*/
-#layout{
-    min-width: 320px;
-    min-height: 320px;
-    margin: 5% auto;
-    width: 80%;
-    height: 580px;
-    align-items: center;
-    justify-content: center;
-    border: 8px solid hsl(200,85%,57%);
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-}
-#imagem-logo{
-    width: 50%;
-    height: 100%;
-    background-color: hsl(200,85%,57%);
-    display: flex;
-    /*border-right: 1px solid rgb(0, 111, 148);*/
-}
-
-a{
-    margin: 20px auto;
-    text-decoration: none;
-}
-img{
-    margin: 0px auto;
-}
-
-/* Login da página */
-
-#lado-login{
-    height: 100%;
-    width: 50%;
-    background-color: lightblue;
-    display: flex;
-    border-radius: 15px;
-}
-#login{
-    margin: 65px auto;
-    width: 320px;
-    height: 400px;
-    font-size: large;
-    text-align: center;
-    background-color: rgb(226, 224, 224);
-    border: 2px solid hsl(200,85%,57%);
-    border-radius: 8px;   
-}
-h1{
-    margin: 10px;
-    text-align: center;
-    color: hsl(200,85%,57%);
-}
-#login label{
-    font-size: small;
-    padding: 30px;
-    color: black;
-    margin-right: 50%;
-    margin-bottom: 45px;
-    text-transform: uppercase;
-}
-.input-box{
-    position: relative;
-    padding: 3.5px;
-    margin: 8px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-}
-.input-box input{
-    position: absolute;
-    width: 80%;
-    height: 100%;
-    border-radius: 8px;
-    outline: 0;
-}
-.input-box i{
-    position: absolute;
-    right: 41px;
-    bottom: 1px;
-    font-size: medium;
-    cursor: pointer;
-    opacity: 0.6;
-}
-
-.input-box li{
+nav #nav__ul{
     list-style: none;
 }
-.input-box li:hover{
-    background-color: hsl(240, 38%, 82%);
-    color: hsl(240,100%,44%);
+
+
+/*Layout principal*/
+main:hover{
+    transform: translateY(10px);
 }
-span{
-    margin-top: 20px;
+main{
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    background-color: var(--mais-claro);
+    background: linear-gradient(180deg,var(--claro),var(--mais-claro), lightblue );
+    border: 2px solid var(--mais-claro);
+    border-radius: 20px;
+    outline: var(--escuro);
 }
-a{
-    text-decoration: none;
-    color: black;
+#main__section--login{
+    display: flex;
+    justify-content: center;
+    background-color: var(--caixa-login);
+    border-radius: 12px;
 }
-#formulario-login input[type="submit"]{
-    background-color: rgb(78, 221, 78);
-    font-size: 95%;
-    font-weight:bolder ;
-    color: black;
-    width: 40%;
-    height: 10%;
-    text-transform: uppercase;
-    margin-left: 55%;
-    margin-top: 20%;
+#main__section--login h1{
+    color: var(--escuro);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 2.5em;
+}
+.form--usuario{
+    position: relative;
+}
+.form--usuario .fa-user{
+    position: absolute;
+    right: 21px;
+    bottom: 5px;
+}
+.form--senha{
+    position: relative;
+}
+.form--senha .fa-solid{
+    cursor: pointer;
+    position: absolute;
+    right: 21px;
+    bottom: 7px;
+}
+#main__section--login label{
+    display: flex;
+    padding: 1.5px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+#main__section--login input{
+    margin: 2.5px;
+    padding: 2.5px;
+    outline: none;
     border: none;
+    border-radius: 8px;
+    text-decoration: none;
+}
+#main__section--login form{
+    padding: 5px;
+}
+section #main__section--login{
+    background-color: #FFF;
+}
+button{
     cursor: pointer;
 }
+#section__form--button{
+    background-color: var(--cor-botão);
+    margin-left: 180px;
+    margin-top: 85px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+}
+.div--mensagem-erro{
+    color: red;
+    display: none;
+}
 
 
-/* Media query */
+/* Media query 
 @media screen and (max-width:1024px){
-    #layout{
+    main{
+        width: 85%;
+    }
+    #main__section--login{
+        width: 85%;
+        margin: 15px auto 15px 45px;
+    }
+    #main__section--img img{
         width: 90%;
     }
-    .dark #layout{
-        width: 90%;
-    }
-    #login{
-        width: 70%;
-    }
-    .dark #login{
-        width: 70%;
-    }
-
 }
 
 @media screen and (max-width:768px){
-    #layout{
-        width: 90%;
-        overflow-x: hidden;
+    main{
+        display: grid;
+        grid-template-columns: auto;
+        height: 80%;
+        margin: 25px auto;
     }
-    img{
-        width: 80%;
-        
+    #main__section--img img{
+        width: 45%;
+        margin-left: 120px;
     }
-    #imagem-logo{
-        width: 50%;
+    #main__section--login{
+        width: 85%;
+        margin: 15px auto;
+        height: 91.5%;
     }
-    #lado-login{
-        width: 80%;
-    }
-    #login{
-        width: 70%;
-        height: 65%;
-        margin: 15% auto;
-    }
-    .dark #layout{
-        width: 90%;
-        overflow-x: hidden;
-    }
-    .dark img{
-        width: 80%;
-        
-    }
-    .dark #imagem-logo{
-        width: 50%;
-    }
-    .dark #lado-login{
-        width: 80%;
-    }
-    .dark #login{
-        width: 70%;
-        height: 65%;
-        margin: 15% auto;
-    }
-}
-
-@media screen and (max-width:650px){
-    #layout{
-        flex-direction: column;
-        height: 75%;
-    }
-    #logo-cabecalho img{
-        margin: 0px;
-    }
-    #imagem-logo{
-        width: 80%;
-        height: 30%;
-    }
-    img{
-        width: 40%;
-        margin: auto 30%;
-    }
-    a{
-        margin: 0px auto;
-    }
-    #lado-login{
-        width: 80%;
-        height: 640px;
-    }
-    #login{
-        width: 80%;
-        height: 380px;
-    }
-    .dark #layout{
-        flex-direction: column;
-        height: 75%;
-    }
-    .dark #imagem-logo{
-        width: 80%;
-        height: 30%;
-    }
-    .dark img{
-        width: 40%;
-        margin: auto 30%;
-    }
-    .dark a{
-        margin: 0px auto;
-    }
-    .dark #lado-login{
-        width: 80%;
-        height: 640px;
-    }
-    .dark #login{
-        width: 80%;
-        height: 380px;
-    }
-
-
 }
 @media screen and (max-width:425px){
-    #layout{
-        width: 100%;
-        height: 70%;
+    main{
+        height: 75%;
     }
-    #imagem-logo img{
-        visibility: hidden;
+    #main__section--img img{
+        display: none;
     }
-    #lado-login{
-        position: absolute;
-        width: 95%;
+    #main__section--login{
         height: 80%;
-    }
-    #login{
-        position: absolute;
-        right: 35px;
-        bottom: 0.5pxpx;
-        width: 85%;
-    }
-    .dark #layout{
         width: 100%;
-        height: 70%;
+        margin-bottom: 150px;
     }
-    .dark #imagem-logo img{
-        visibility: hidden;
-    }
-    .dark #lado-login{
-        position: absolute;
-        width: 95%;
-        height: 80%;
-    }
-    .dark #login{
-        position: absolute;
-        right: 35px;
-        bottom: 0.5pxpx;
-        width: 85%;
-    }
-}
-@media screen and (max-width:375px){
-    #login{
-        right: 10px;
-        width: 95%;
-    }
-    .dark #login{
-        right: 10px;
-        width: 95%;
-    }
-}
+}*/

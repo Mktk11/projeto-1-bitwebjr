@@ -6,30 +6,27 @@
     <link rel="stylesheet" href="css/homeStyle.css">
 	<script src="js/scripts.js" defer></script>
 </head>
-<body>
-    <div class="sidebar">
-        <div class="logo">
-            <img src="imagens/logo-bit-removebg.png" alt="Logo">
-        </div>
-        <ul class="sidebarLinks">
-            <li><img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" class="icone-links"> <a href="#">Home</a></li>
-			<li><img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" class="icone-links"> <a href="#">Documentação</a></li>
-            <li><img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" class="icone-links"> <a href="#">Projetos</a></li>
-        </ul>
-		<div class="profile">
-			<img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="Foto de perfil" class="avatar" id="avatar">
-			<span class="usuario-logado">$User</span>
-			<div class="    " id="dropdown">
-				<a href="#">Configurações</a>
-				<a href="#">Redefinir senha</a>
-				<a href="#">Sair</a>
-			</div>
-		</div>
-	</div>
-
-
-
-    <div class="main">
+<body class="light">
+    <aside class="">
+        <input type="checkbox" name="change-theme" id="change-theme">
+        <label for="change-theme">
+            <i class="fa-regular fa-sun"></i>
+            <i class="fa-regular fa-moon"></i>
+        </label>
+        <nav class="">
+            <img src="imagens/logo-bit-removebg.png" alt="logo da bitweb Junior" srcset="" onclick="temaLightDark()">
+            <ul class="">
+                <li><a href=""><i class="fa-solid fa-house"> </i>Home</a> </li>
+                <li><a href=""><i class="fa-solid fa-folder"></i>Documentação</a></li>
+                <li><a href=""><i class="fa-solid fa-file"></i>Páginas</a></li>
+            </ul>
+            <div id="nav__div--perfil">
+                <img src="imagens/logo-bit-removebg.png" id="nav__img--perfil" alt="perfil-usuario">
+                <p>perfil</p>
+            </div>
+        </nav>
+    </aside>
+    <main class="">
         <h1>Home</h1>
         
         <div class="dash-grid">
@@ -60,6 +57,6 @@
                 <textarea class="notas" placeholder="Digite suas notas aqui..."></textarea>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>

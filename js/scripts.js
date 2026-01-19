@@ -1,67 +1,69 @@
-// Códigos
-//Seleção de elementos
-
-const email = document.querySelector("#user");
-const senha = document.querySelector("#password");
-const validaForm = document.querySelector("#form");
+const mudaTema = document.querySelector("#change-theme");
 const visivelInvisivel = document.querySelector("#olho");
-const mudaTemabtn = document.querySelector("#change-theme");
-let spanErro = document.getElementById("erroLogin");
+const valorUsuario = document.getElementById("user")
+const valorSenha = document.getElementById("password")
+const loginUsuario = document.getElementById("section__form--button")
+const sideBar = document.querySelector(".sidebar");
+let navPage = document.querySelectorAll("ul li")
 
-//Funções
 
+// Altera o Tema da página clicando no ícone
+function temaLightDark(){
+    document.body.classList.toggle("dark");
+    /*document.aside.classList.toggle("dark");*/
+    mudaTema.checked = true;
+}
 
-//Eventos
-//Muda a cor do input quando selecionado e quando não selecionado
-user.addEventListener("blur",(e) =>{
-    user.style.border = 'none'
-})
-user.addEventListener("focus",(e) =>{
-    user.style.border = '1px solid hsl(240,100%,44%)'
-    spanErro.style.display = "none";
-})
-senha.addEventListener("blur",(e) =>{
-    senha.style.border = 'none'
-})
-
-senha.addEventListener("focus",(e) =>{
-    senha.style.border = '1px solid hsl(240,100%,44%)'
-    spanErro.style.display = "none";
-})
-//valida o formulário
-validaForm.addEventListener("submit",(e) =>{
-    e.preventDefault();
-
-    const usuario = email.value;
-    const senha = password.value;
-    
-
-    if(!usuario || !senha){
-        spanErro.textContent = "Usuário ou senha incorretos.";
-        spanErro.style.display = "block";
+// Altera o icone ao clicar nele
+visivelInvisivel.addEventListener("click",function(){
+    const tipo = password.type;
+    if(tipo === "password"){
+        password.type = "text";
     }
     else{
-        document.getElementById("botão-entrar").addEventListener("click",function(){
-            // Vai para á próxima página
-            window.location.href = "home.html"
-            console.log(usuario,senha);
-        })
+        password.type = "password";
     }
-
-})
-
-//abre o olho e fecha na imagem
-visivelInvisivel.addEventListener("click",function(){
-    const type = password.type === "password" ? "text" : "password";
-    password.type = type;
-
-    this.classList.toggle("fa-eye");
+    
     this.classList.toggle("fa-eye-slash");
-
+    this.classList.toggle("fa-eye");
 })
 
-//Muda o tema da página
+// Válida o formulário
 
-mudaTemabtn.addEventListener("change",function(){
-    document.body.classList.toggle("dark");
-})
+function validaForm(){
+    const mensagemErro = document.querySelector(".div--mensagem-erro")
+    if((valorSenha.value.trim() == "") || (valorSenha.value.trim == "")){
+        console.log("Valor não inserido!!!")
+        mensagemErro.style.display = "block"
+    }
+    else{
+        // Vai para á próxima página
+        window.location.href = "doc.html";
+        console.log("Entrou");
+        mensagemErro.style.display = "none";
+        
+    }
+}
+
+function chamaPagina(num){
+    console.log("pagina"+num)
+    for(let i=1;i<=5;i++){
+        let limparSelecao = document.getElementById("pagina"+i)
+        console.log("pagina"+i)
+        limparSelecao.style.display = "none"
+    }
+    let paginaSel = document.getElementById("pagina"+num)
+    paginaSel.style.display = "block"
+
+    navPage.forEach(function(link){
+        link.addEventListener('click', function() {
+
+        navPage.forEach(function(l) {
+            l.classList.remove('active');
+            
+        });
+        this.classList.add('active');
+        });
+    });
+
+}

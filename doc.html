@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
      crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <script src="js/doc.js" defer></script>
+     <script src="js/scripts.js" defer></script>
     <title>Documentação</title>
 </head>
 <body class="light">
@@ -18,13 +18,16 @@
             <i class="fa-regular fa-moon"></i>
         </label>
         <nav class="">
-            <img src="imagens/logo-bit-removebg.png" alt="logo da bitweb Junior" srcset="">
+            <img src="imagens/logo-bit-removebg.png" alt="logo da bitweb Junior" srcset="" onclick="temaLightDark()">
             <ul class="">
-                
                 <li><a href=""><i class="fa-solid fa-house"> </i>Home</a> </li>
                 <li><a href=""><i class="fa-solid fa-folder"></i>Documentação</a></li>
                 <li><a href=""><i class="fa-solid fa-file"></i>Páginas</a></li>
             </ul>
+            <div id="nav__div--perfil">
+                <img src="imagens/logo-bit-removebg.png" id="nav__img--perfil" alt="perfil-usuario">
+                <p>perfil</p>
+            </div>
         </nav>
     </aside>
     <main class="">
@@ -32,14 +35,136 @@
             Documentação
         </h1>
         <span id="divisao">
-            <a href="">Projetos</a>
-            <a href="">Inventário</a>
-            <a href="">Contratos</a>
-            <a href="">Juridico</a>
-            <a href="">Outros</a>
+            <ul>
+                <li class="active" href="#pagina1" onclick="chamaPagina(1)" style="background-color: #FFF;">
+                    Projetos
+                </li>
+                <li id="inventario" href="#pagina2" onclick="chamaPagina(2)" style="background-color: bisque;">
+                    Inventário 
+                </li>
+                <li id="contratos" href="#pagina3" onclick="chamaPagina(3)" style="background-color: greenyellow;">
+                    Contratos 
+                </li>
+                <li id="juridico" href="#pagina4" onclick="chamaPagina(4)" style="background-color: darksalmon;">
+                    Juridico
+                </li>
+                <li id="outros" href="#pagina5" onclick="chamaPagina(5)" style="background-color: darkorchid;">
+                    Outros 
+                </li>
+            </ul>
         </span>
         <div class="document">
-            
+            <div id="pagina1">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>INVOICE</th>
+                            <th>CUSTOMER</th>
+                            <th>DATE</th>
+                            <th>AMOUNT</th>
+                            <th>STATUS</th>
+                            <th>TRACKING</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            <div id="pagina2">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>INVOICE</th>
+                            <th>CUSTOMER</th>
+                            <th>DATE</th>
+                            <th>AMOUNT</th>
+                            <th>STATUS</th>
+                            <th>TRACKING</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="pagina3">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>INVOICE</th>
+                            <th>CUSTOMER</th>
+                            <th>DATE</th>
+                            <th>AMOUNT</th>
+                            <th>STATUS</th>
+                            <th>TRACKING</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="pagina4">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>INVOICE</th>
+                            <th>CUSTOMER</th>
+                            <th>DATE</th>
+                            <th>AMOUNT</th>
+                            <th>STATUS</th>
+                            <th>TRACKING</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="pagina5">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>INVOICE</th>
+                            <th>CUSTOMER</th>
+                            <th>DATE</th>
+                            <th>AMOUNT</th>
+                            <th>STATUS</th>
+                            <th>TRACKING</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 </body>

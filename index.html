@@ -5,63 +5,76 @@
     <title>BitWeb - Projeto 1</title>
     <!-- Ícones -->
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
-     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
-     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/9729da2774.js" crossorigin="anonymous"></script>
 
     <!-- Estilos -->
 
     <link rel="stylesheet" href="css/estilo.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Javascript -->
 
     <script src="js/scripts.js" defer></script>
 
   </head>
-  <body class="dark">
-    <header>
-      <h2 id="logo-cabecalho">
-        <a href="#">
-          <img src="imagens/logo.png" alt="BitWeb - Server">
+  <body class="light">
+    <nav class="light:bg-blue-500 dark:bg-blue-800 light:text-black dark:text-white p-4">
+      <div class="container mx-auto flex justify-between">
+        <a href="#" class="text-xl font-bold">
+          <img src="imagens/logo.png"  onclick="temaLightDark()" alt="BitwebJr" class="w-40">
         </a>
-      </h2>
-      <div>
-        <input type="checkbox" name="change-theme" id="change-theme">
-        <label for="change-theme">
-          <i class="fa-regular fa-sun"></i>
-          <i class="fa-regular fa-moon"></i>
-        </label>
+        <ul class="flex space-x-4">
+          <li class="w-30 m-4">
+            <input type="checkbox" name="change-theme" id="change-theme">
+            <label for="change-theme">
+              <i class="fa-solid fa-toggle-off" onclick="temaLightDark()"></i>
+              <i class="fa-solid fa-toggle-on" onclick="temaLightDark()"></i>
+            </label>
+          </li>
+        </ul>
       </div>
-    </header>
-    <main id="layout">
-      <div id="imagem-logo">
-        <a href="#">
-          <img src="imagens/logo-bit-removebg.png" alt="BitWeb - Server">
+    </nav>
+    <main class="sm:grid sm:grid-cols-2 flex flex-col xl:w-1/2 w-[60%] md:h-1/2 h-1/2 justify-center items-center">
+      <section id="main__section--img" class="hidden sm:block h-[50%]">
+        <a href="#" class="h-full w-full flex justify-center items-center">
+          <img src="imagens/logo-bit-removebg.png" alt="Logo da BitwebJr" class="mx-auto lg:h-[50%] h-3/4">
         </a>
-      </div>
-      <div id="lado-login">
-        <div id="login">
-            <h1>Login</h1>
-            <form id="form">
-                <div id="formulario-login">
-                  <label for="user">usuário</label>
-                    <div class="input-box">
-                      <input type="text" name="user" id="user"/>
-                      <i class="fa-solid fa-user"></i>
-                    </div>
-                  <label for="password">senha</label>
-                    <div class="input-box">
-                      <input type="password" name="password" id="password"/>
-                      <i class="fas fa-eye" id="olho"></i>
-                      <br>
-                    </div>
-                    <a href="#">Esqueci minha senha</a>
-                    <span id="erroLogin" style="color: red; display: none;"></span>
-                  <input type="submit" id="botão-entrar" value="ENTRAR">
-                </div>
-            </form>
-        </div>
-      </div>
+      </section>
+      <section id="main__section--login" class="mx-auto md:mb-7 md:w-[65] w-[50%] ">
+        <form action="">
+          <h1>Login</h1>
+          <div class="w-full max-w-sm min-w-[200px] relative mt-4">
+            <label class="block mb-2 text-sm text-slate-600">
+              Usuário:
+            </label>
+            <div class="relative">
+              <input type="email" class="w-full bg-white placeholder:text-slate-700 text-slate-300 text-sm border border-slate-200 rounded-md pl-1 pr-10 py-0 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="nome de usuário/Email..." />
+              <button class="bg-transparent absolute right-1 bottom-2 rounded bg-slate-800 p-1 border border-transparent text-center text-sm text-black transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                <i class="fa-solid fa-user w-2 h-2"></i>
+              </button>
+            </div>
+          </div>
+          <div class="w-full max-w-sm min-w-[200px] relative mt-4">
+            <label class="block mb-2 text-sm text-slate-600">
+              Senha:
+            </label>
+            <div class="relative">
+              <input type="text" id="password" class="w-full bg-white placeholder:text-slate-700 text-slate-300 text-sm border border-slate-200 rounded-md pl-1 pr-10 py-0 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Senha..." />
+              <button class="bg-transparent absolute right-1 bottom-5 -top-2 rounded bg-slate-800 p-1 mb-10 border border-transparent text-center text-sm text-black transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                <i class="fa-solid fa-eye-slash w-2 h-2" id="olho"></i>
+              </button>
+            </div>
+          </div>
+          <div class="text-center div--mensagem-erro">
+            <p>
+              Valor não inserido
+            </p>
+          </div>
+          <button type="submit" id="section__form--button" onclick="validaForm()" value="entrar">
+            entrar
+          </button>
+          
+        </form>
+      </section>
     </main>
   </body>
 </html>
