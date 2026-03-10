@@ -1,0 +1,283 @@
+@import url("_basico.css");
+@import url("_dashboard.css");
+
+.section__divusuario{
+    margin: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    height: 350px; 
+}
+.section__divprojetos{
+    margin: 5px;
+    width : 100%;
+    padding: 5px;
+    margin-top: 5px;
+    height: 350px;
+}
+.tema--light .section__divusuario{
+    box-shadow: 2px 0 10px var(--mais-escuro);
+}
+.tema--dark .section__divusuario{
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+.tema--light .section__divprojetos{
+    box-shadow: 2px 0 10px var(--mais-escuro);
+}
+.tema--dark .section__divprojetos{
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+.section__divprojetos > ul > li{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.newproj--botoes{
+    margin: 15px;
+}
+.newproj--botoes > button{
+   border: 2px solid var(--mais-escuro);
+}
+#section__divcalendario{
+    margin: 5px;
+    padding: 5px;
+    margin-top: 5px;
+}
+.tema--light #section__divcalendario{
+    box-shadow: 2px 0 10px var(--mais-escuro);
+}
+.tema--dark #section__divcalendario{
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+#div__mes{
+    display: grid;
+    padding: 5px;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+}
+.tema--light #div__mes{
+    border: 2px solid var(--mais-escuro);
+}
+.tema--dark #div__mes{
+    border: 2px solid var(--mais-claro);
+}
+table{
+    margin:1rem;
+}
+thead > tr > td{
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 16%;
+}
+.tema--dark thead > tr > td{
+    border: 2px solid var(--mais-claro);
+}
+.tema--light thead > tr > td{
+    border: 2px solid var(--mais-escuro);
+}
+tbody > tr > td{
+    padding: 5px;
+    width: 15.5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+}
+.tema--dark tbody > tr > td{
+    border-bottom:2px solid var(--mais-claro);
+}
+.tema--light tbody > tr > td{
+    border-bottom:2px solid var(--mais-escuro);
+}
+.tema--dark tbody > tr > td:hover{
+    background: linear-gradient(180deg,var(--claro),var(--mais-claro), lightblue );
+    color: white;
+}
+.tema--light tbody > tr > td:hover{
+    background: linear-gradient(180deg,darkblue,var(--mais-escuro),var(--escuro));
+    color: white;
+}
+.section__blocodenotas{
+    padding: 5px;
+    margin-top: 5px;
+    box-shadow: 2px 0 10px var(--mais-escuro);
+    margin: 5px;
+    width : 100%;
+}
+.tema--light .section__blocodenotas{
+    box-shadow: 2px 0 10px var(--mais-escuro);
+} 
+.tema--dark .section__blocodenotas{
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+.section__blocodenotas > textarea{
+    width: 100%;
+    color: black;
+}
+@media screen and (min-width:1024px) and (max-width: 1220px){
+    nav > ul > li > a{
+        justify-content: center;
+    }
+    section{
+        margin-bottom: 180px;
+        margin-right: 150px;
+        grid-template-columns: auto auto;
+        width: 95%;
+        font-size: 1rem;
+    }
+    tbody > tr > td{
+        padding: 8px;
+    }
+}
+@media screen and (min-width:480px) and (max-width: 1024px){
+    main{
+        padding: 15px;
+        font-size: 1.1rem;
+        height: 100%;
+    }
+    section{
+        margin-bottom: 250px;
+        grid-template-columns: auto;
+        width: 100%;
+    }
+    .section__divusuario{
+        width: 100%;
+        height: 100%;
+    }
+    .section__divprojetos{
+        width: 100%;
+        height: 100%;
+    }
+    #section__divcalendario{
+        width: 100%;
+    }
+    .section__blocodenotas{
+        width: 100%;
+        height: 100%;
+    }
+    ul > li > img{
+        width: 25px;
+    }
+    aside{
+        width: 50px;
+        height: 100%;
+    }
+    ul > li > label > i{
+        padding: 20px;
+    }
+    nav > ul > li{
+        padding-top: 50px;
+        display: grid;
+        justify-content: center;
+    }
+    thead > tr > td{
+        font-size: .8rem;
+    }
+    tbody > tr > td{
+        font-size: 1rem;
+        padding: 5px;
+    }
+    .span__txt--link{
+        display: none;
+    }
+    .nav__imgperfil{
+        margin: 80px 0px 0px 0px;
+        border-radius: 50%;
+    }
+}
+@media screen and (min-width:425px) and (max-width: 480px){
+    main{
+        font-size: 1.1rem;
+        font-weight: bold;
+        height: 100%;
+    }
+    section{
+        grid-template-columns: auto;
+        margin-bottom: 250px;
+    }
+    thead > tr > td{
+        padding: 2px;
+        font-size: 1rem;
+        text-align: center;
+        width: 16%;
+    }
+    tbody > tr > td{
+        border-bottom:2px solid var(--mais-escuro);
+        padding: 2px;
+        width: 5.5%;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.5s;
+        text-align: center;
+    }
+    ul > li > img{
+        width: 25px;
+    }
+    aside{
+        width: 50px;
+        height: 100%;
+    }
+    .span__txt--link{
+        display: none;
+    }
+    .nav__imgperfil{
+        margin: 100px 0px 0px 0px;
+        border-radius: 50%;
+        outline: 3px solid var(--mais-claro);
+    }
+}
+@media screen and (min-width:375px) and (max-width: 425px){
+    main{
+        display: grid;
+        grid-template-columns: auto;
+        padding: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        height: 100%;
+    }
+    section{
+        margin-bottom: 250px;
+        grid-template-columns: auto;
+        width: 100%;
+    }
+    .section__divusuario{
+        width: 100%;
+    }
+    .section__divprojetos{
+        width: 100%;
+    }
+    #section__divcalendario{
+        width: 100%;
+    }
+    .section__blocodenotas{
+        width: 100%;
+    }
+    thead > tr > td{
+        padding: 2px;
+        font-size: 0.5rem;
+        text-align: center;
+        width: 16%;
+    }
+    tbody > tr > td{
+        padding: 2px;
+        width: 5.5%;
+        font-size: 0.5rem;
+        cursor: pointer;
+        transition: 0.5s;
+        text-align: center;
+    }
+    ul > li > img{
+        width: 25px;
+    }
+    aside{
+        width: 50px;
+        height: 100%;
+    }
+    .span__txt--link{
+        display: none;
+    }
+    .nav__imgperfil{
+        margin: 100px 0px 0px 0px;
+        border-radius: 50%;
+    }
+}

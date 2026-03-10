@@ -1,0 +1,31 @@
+html{
+    box-sizing: border-box;
+}
+*,*:before,*:after{
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+}
+:root{
+    --claro:hsl(200,85%,57%);
+    --escuro:hsl(240,100%,44%);
+    --caixa-login:rgb(220, 220, 220);
+    --cor-botão:rgb(35, 251, 5);
+    --mais-escuro:hsl(240, 94%, 31%);
+    --mais-claro:hsl(200, 89%, 70%);
+}
+.tema--light{
+    background: linear-gradient(180deg,var(--claro),var(--mais-claro), lightblue );
+    box-shadow: 2px 0 10px var(--mais-escuro);
+}
+.tema--dark{
+    background: linear-gradient(180deg,darkblue,var(--mais-escuro),var(--escuro));
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+input[type="checkbox"]{
+    display: none;
+}
+i{
+    color: #FFF;
+    cursor: pointer;
+}

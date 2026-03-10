@@ -1,0 +1,301 @@
+@import url("_basico.css");
+
+/* Animação depois que muda tema */
+html,body{
+    transition: 0.5s;
+    height: 100%;
+}
+main{
+    transition: 0.5s ease;
+}
+nav{
+    padding: 1rem;
+}
+nav > div > a > img{
+    transition: 0.5s;
+    width: 12rem;
+    margin-left: 6rem;
+}
+.nav__container{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 100%;
+}
+nav > div > a > img:hover{
+    transform: translateX(-5px);
+    transform: translateX(5px);
+}
+ul{
+    display: flex;
+    margin-left: 1rem;
+}
+ul > li{
+    width: 10rem;
+    margin: 0.5rem;
+}
+/* Temas Light */
+.tema--light nav{
+    box-shadow: 2px 0 10px var(--mais-escuro);
+}
+.fa-toggle-off{
+    display: block;
+}
+.fa-toggle-on{
+    display: none;
+}
+/* Dark theme*/
+.tema--dark .fa-toggle-on{
+    display: block;
+}
+.tema--dark .fa-toggle-off{
+    display: none;
+}
+.tema--dark header{
+    background-color: var(--escuro);
+    color: #FFF;
+}
+.tema--dark main{
+    background-color: var(--mais-escuro);
+    background: linear-gradient(180deg,darkblue,var(--mais-escuro),var(--escuro));
+    border-radius: 20px;
+    /*border: 1px solid var(--mais-escuro);*/
+    border: 2px solid var(--mais-escuro);
+}
+
+/* Navegação topo */
+li > label > .fa-solid{
+    cursor: pointer;
+    font-size: 2rem;
+}
+.tema--dark nav{
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+nav #nav__ul{
+    list-style: none;
+}
+/*Layout principal*/
+main:hover{
+    transform: translateY(10px);
+}
+main{
+    margin: 100px auto;
+    width: 950px;
+    justify-content: center;
+    gap: 100px;
+    background-color: var(--mais-claro);
+    background: linear-gradient(180deg,var(--claro),var(--mais-claro), lightblue );
+    border: 2px solid var(--mais-claro);
+    border-radius: 20px;
+    outline: var(--escuro);
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#main_section--login{
+    /*border: 1px solid green;*/
+    background-color: var(--caixa-login);
+    border-radius: 20px;
+    margin: 50px 25px;
+    width: 300px;
+    /*width: 95%;*/
+    height: 420px;
+    background: linear-gradient(180deg,#e2eced,#c9d3d3,#e0e5e2);
+}
+#main_section--img {
+    margin: 50px 25px;
+    width: 350px;
+    display: grid;
+    justify-items: center;
+}
+#main_section--img > img{
+    width: 80%;
+}
+button{
+    cursor: pointer;
+}
+.form--div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 25px 25px;
+}
+.form--div > input{
+    width: 80%;
+    border-radius: 12px;
+}
+
+#section__div--logincadastro button{
+    margin-left: 5%;
+    border: 1px solid var(--cor-botão);
+    padding: 2px;
+    border-radius: 8px;
+    background-color: greenyellow;
+}
+#section__div--logincadastro button:hover{
+    color: #FFF;
+    background-color: var(--cor-botão);
+}
+form{
+    text-transform: uppercase;
+}
+#form--login{
+    /*transform: rotateY(180deg);*/
+}
+#form--cadastro{
+    display: none;
+    /*transform: rotateY(180deg);*/
+}
+#form--login > form > .form--div > input[type="submit"]{
+    margin-top: 140px;
+    cursor: pointer;
+}
+#form--login > form > .form--div > input[type="submit"]:hover{
+    color: #FFF;
+    background-color: var(--cor-botão);
+}
+input[type="submit"]{
+    background-color: var(--cor-botão);
+}
+.div--mensagem-erro{
+    color: red;
+    display: none;
+}
+label > .custom-file-upload{
+    cursor: pointer;
+}
+
+/******************* Melhorar o landscape parte login *************/
+/* Media query */
+@media screen and (max-width:992px){
+    main{
+        margin: 50px auto;
+        width: 95%;
+        grid-template-columns:auto auto;
+        max-height: 75%;
+        height: 70%;
+        gap: 25px;
+        justify-items: center;
+        align-items: center;
+    }
+    #main_section--img{
+        display: block;
+        width: 45%;
+    }
+    #main_section--login{
+        /*border: 1px solid green;*/
+        background-color: var(--caixa-login);
+        border-radius: 20px;
+        width: 350px;
+        height: 90%;
+        background: linear-gradient(180deg,#e2eced,#c9d3d3,#e0e5e2);
+    }
+    #main_section--img{
+        width: 300px;
+        margin: 50px auto;
+    }
+    .form--div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 25px 25px;
+    }
+    .form--div > input{
+        width: 80%;
+    }
+    input[type="submit"]{
+        background-color: var(--cor-botão);
+    }
+    #form--cadastro > form > .form--div > input[type="submit"]{
+        margin-top: 70px;
+    }
+    #form--login > form > .form--div > input[type="submit"]{
+        margin-top: 180px;
+    }
+}
+@media screen and (max-width:768px){
+    main{
+        margin: 50px auto;
+        width: 95%;
+        grid-template-columns:auto;
+        max-height: 75%;
+        height: 70%;
+        justify-items: center;
+        align-items: center;
+    }
+    #main_section--img{
+        display: none;
+    }
+    #main_section--login{
+        /*border: 1px solid green;*/
+        background-color: var(--caixa-login);
+        border-radius: 20px;
+        width: 380px;
+        height: 90%;
+        background: linear-gradient(180deg,#e2eced,#c9d3d3,#e0e5e2);
+    }
+    .form--div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 25px 25px;
+    }
+    .form--div > input{
+        width: 80%;
+    }
+    input[type="submit"]{
+        background-color: var(--cor-botão);
+    }
+    #form--cadastro > form > .form--div > input[type="submit"]{
+        margin-top: 70px;
+    }
+    #form--login > form > .form--div > input[type="submit"]{
+        margin-top: 180px;
+    }
+}
+@media screen and (min-width:325px) and (max-width: 480px){
+    li > label > .fa-solid{
+        cursor: pointer;
+        font-size: 2rem;
+        display: none;
+    }
+    main{
+        margin: 50px auto;
+        width: 90%;
+        grid-template-columns: auto;
+        max-height: 75%;
+        height: 75%;
+        justify-items: center;
+        align-items: center;
+    }
+    #main_section--img{
+        display: none;
+    }
+    #main_section--login{
+        /*border: 1px solid green;*/
+        background-color: var(--caixa-login);
+        border-radius: 20px;
+        width: 290px;
+        height: 85%;
+    }
+    .form--div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 10px 25px;
+    }
+    .form--div > input{
+        width: 80%;
+    }
+    input[type="submit"]{
+        background-color: var(--cor-botão);
+    }
+    #form--login > form{
+        margin-top: 15px;
+    }
+    #form--cadastro > form > .form--div > input[type="submit"]{
+        margin-top: 90px;
+    }
+    #form--login > form > .form--div > input[type="submit"]{
+        margin-top: 150px;
+    }
+}

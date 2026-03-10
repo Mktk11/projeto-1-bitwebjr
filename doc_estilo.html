@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/docStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="js/scripts.js" defer></script>
+    <title>Documentação</title>
+</head>
+<body class="tema--light">
+    <aside class="body__aside">
+        <ul>
+          <li>
+            <input type="checkbox" name="change-theme" id="change-theme">
+            <label for="change-theme">
+              <i class="fa-solid fa-toggle-off" onclick="temaLightDark()"></i>
+              <i class="fa-solid fa-toggle-on" onclick="temaLightDark()"></i>
+            </label>
+          </li>
+        </ul>
+        <nav>
+            <img src="imagens/logo-bit-removebg.png" alt="logo da bitweb Junior" srcset="">
+            <ul>
+                <li >
+                    <a href="home.php">
+                        <span class="span__icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="span__txt--link">Home</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="doc.php">
+                        <span ><i class="fa-solid fa-folder"></i></span>
+                        <span class="span__txt--link">Documentos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="projetos.php">
+                        <span ><i class="fa-solid fa-file"></i></span>
+                        <span class="span__txt--link">Páginas</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav__imgperfil">
+                <img src="?php echo $foto;?>" alt="perfil-usuario">
+                <p>perfil</p>
+            </div>
+        </nav>
+    </aside>
+    <main class="">
+        <h1>Documentação</h1>
+        <section>
+            <div class="section__divprojetos">
+                <span>Projetos</span>
+                <span>Projetos</span>
+                <span>Projetos</span>
+                <span>Projetos</span>
+                <span>Projetos</span>
+                <span>Projetos</span>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

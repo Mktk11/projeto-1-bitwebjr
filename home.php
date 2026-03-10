@@ -1,0 +1,144 @@
+<?php
+require("cadastro.php");
+require("cadastrar.php");
+// 1. SEMPRE a primeira coisa no arquivo
+session_start();
+
+// 2. PROTEÇÃO: Se não estiver logado, volta para o login
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: index.html");
+    exit;
+}
+
+try{
+    $sql = "select * from novos_projetos";
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+
+    $projeto = $stmt->fetch(PDO::FETCH_ASSOC);
+    $projeto_tipo = "Nenhum Projeto";
+    $projeto_tempo = "Nenhum Projeto";
+
+    if($projeto){
+        $projeto_tipo = $projeto['tipo'];
+        $projeto_pessoas = $projeto['num_pessoas'];
+        $data_criacao = new DateTime($projeto['tempo']);
+        $prazo = clone $data_criacao;
+        $prazo->modify('+ 2 months');
+        $projeto_info = $projeto_tipo . " (" . $projeto_pessoas . " pessoas - Prazo: " . $prazo->format('d/m/Y') . ")";
+    }
+}catch(PDOException $e){
+    echo "<h1>ERRO: ".$e->getCode()." Mensagem: ".$e->getMessage()."</h1><br>";
+}
+// 3. VARIÁVEIS (pegando da sessão que você criou no login.php)
+$user = $_SESSION['usuario_nome'] ?? "Usuário";
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - <?php echo $user; ?> </title>
+    <link rel="stylesheet" href="css/homeStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="js/scripts.js" defer></script>
+</head>
+<body class="tema--light">
+    <aside class="body__aside">
+        <ul>
+          <li>
+            <input type="checkbox" name="change-theme" id="change-theme">
+            <label for="change-theme">
+              <i class="fa-solid fa-toggle-off" onclick="temaLightDark()"></i>
+              <i class="fa-solid fa-toggle-on" onclick="temaLightDark()"></i>
+            </label>
+          </li>
+        </ul>
+        <nav>
+            <img src="imagens/logo-bit-removebg.png" alt="logo da bitweb Junior" srcset="">
+            <ul>
+                <li >
+                    <a href="home.php">
+                        <span class="span__icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="span__txt--link">Home</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="doc.php">
+                        <span ><i class="fa-solid fa-folder"></i></span>
+                        <span class="span__txt--link">Documentos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="projetos.php">
+                        <span ><i class="fa-solid fa-file"></i></span>
+                        <span class="span__txt--link">Páginas</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav__imgperfil">
+                <img src="?php echo $foto;?>" alt="perfil-usuario">
+                <p>perfil</p>
+            </div>
+        </nav>
+    </aside>
+    <main class="">
+        <h1>Home</h1>
+        <section>
+            <div class="section__divusuario">
+                <h2>Bem-vindo</h2>
+                <div>Olá, <span ><?php echo $user; ?></span></div>
+                <p>Seja bem-vindo ao seu painel de controle. Aqui você pode gerenciar seus projetos, tarefas e acompanhar seu progresso.</p>
+            </div>
+            <div class="section__divprojetos">
+                <div class="section__divnewproj">
+                    <h2>Novos Projetos</h2>
+                    <div class="newproj--botoes">
+                        <button onclick="adicionarProjeto()">Adicionar</button>
+                        <button>Remover</button>
+                    </div>
+                </div>
+                <ul>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/5994/5994710.png" > <a href="#"> <?php echo $projeto_info;?></a></li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/5994/5994710.png" > <a href="#">Mobile development (2 pessoas - 2 meses)</a></li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/5994/5994710.png" > <a href="#">Marketing (2 pessoas - 1 mês)</a></li>
+                </ul>
+            </div>
+            <div id="section__divcalendario">
+                <div id="div__mes">
+                    <button id="div__mestras"><i class="fa-solid fa-angle-left"></i></button>
+                    <h2 id="div__mesatual"></h2>
+                    <button id="div__mesfrente"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>DOM</td>
+                            <td>SEG</td>
+                            <td>TER</td>
+                            <td>QUA</td>
+                            <td>QUI</td>
+                            <td>SEX</td>
+                            <td>SÁB</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody--calendariocorpo">
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="section__blocodenotas">
+                <h2>Bloco de Notas</h2>
+                <textarea placeholder="Digite suas notas aqui..."></textarea>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

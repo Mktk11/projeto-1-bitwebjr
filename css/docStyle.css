@@ -1,0 +1,17 @@
+@import url("_basico.css");
+@import url("_dashboard.css");
+
+body{
+    margin: 0px;
+}
+main{
+    width: 100vh;
+}
+section{
+    grid-template-columns: auto auto auto auto auto;
+    height: 90vh;
+}
+.section__divprojetos{
+    background-color: lightgray;
+    width: 100%;
+}

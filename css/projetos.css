@@ -1,0 +1,120 @@
+@import url("_basico.css");
+
+html,body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+li{
+    list-style: none;
+    padding: 5px;
+    margin: 8px;
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: large;
+    color: #FFF;
+}
+#main__section--divisao{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 25%;
+}
+#main__section--resolucao{
+    margin-top: 1.5%;
+    text-align: end;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 2px 0 10px var(--mais-escuro);
+    height: 85%;
+}
+#div--resolucoes{
+    padding-top: 0.105%;
+}
+#resolucao__div--botoes{
+    margin: 0.5%;
+    justify-content: end;
+    display: grid;
+    grid-template-columns: 10% 10%;
+    gap: 0.5%;
+}
+#resolucao__div--botoes > button{
+    border: none;
+    background-color: var(--mais-claro);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: larger;
+}
+#resolucao__div--botoes > button:hover{
+    background-color: var(--mais-escuro);
+    color: #FFF;
+}
+.dark #main__section--resolucao{
+    margin-top: 1.5%;
+    text-align: end;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+#section__div--projetos{
+    box-shadow: 2px 0 10px var(--mais-escuro);
+    font-size: xx-large;
+    margin-right: 2.5%;
+    border-radius: 8px;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+}
+.dark #section__div--projetos{
+    box-shadow: 2px 0 10px var(--mais-claro);
+    margin-right: 2.5%;
+    border-radius: 8px;
+    color: #FFF;
+    text-align: center;
+}
+#section__div--concluidos{
+    background-color: chartreuse;
+    box-shadow: 2px 0 10px var(--mais-escuro);
+    font-size: xx-large;
+    margin-right: 2.5%;
+    border-radius: 8px;
+    align-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+.dark #section__div--concluidos{
+    background-color: chartreuse;
+    margin-right: 2.5%;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+#section__div--andamento{
+    background-color: lightgray;
+    box-shadow: 2px 0 10px var(--mais-escuro);
+    font-size: xx-large;
+    margin-right: 2.5%;
+    align-content: center;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+.dark #section__div--andamento{
+    background-color: lightgray;
+    margin-right: 2.5%;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+main{
+    margin: 50px;
+    width: 80%;
+    height: 80%;
+}
+
+
+@media (max-width:768px){
+    main{
+        margin-left: 5px;
+    }
+}
