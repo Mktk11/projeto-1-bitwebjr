@@ -44,7 +44,19 @@ function temaLightDark(){
         localStorage.setItem("mudaTema", "tema--dark");
     }
     
-};
+}
+function botaoAtivado(forma){
+    if(forma=="cadastro"){
+        formCadastro.style.display = "block";
+        formLogin.style.display = "none";
+    }
+    else{
+        formCadastro.style.display = "none";
+        formLogin.style.display = "block";
+    }
+}
+
+;
 
 /*function fecharMenu(){
     lateralMenu.classList.toggle('diminuir');
