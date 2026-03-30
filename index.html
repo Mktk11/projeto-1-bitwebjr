@@ -20,14 +20,14 @@
     <nav>
       <div class="nav__container">
         <a href="#">
-          <img src="imagens/logo.png"  onclick="temaLightDark()" alt="BitwebJr">
+          <img src="imagens/logo.png" alt="BitwebJr">
         </a>
         <ul>
           <li>
             <input type="checkbox" name="change-theme" id="change-theme">
             <label for="change-theme">
-              <i class="fa-solid fa-toggle-off" onclick="temaLightDark()"></i>
-              <i class="fa-solid fa-toggle-on" onclick="temaLightDark()"></i>
+              <i class="fa-solid fa-toggle-off"></i>
+              <i class="fa-solid fa-toggle-on"></i>
             </label>
           </li>
         </ul>
@@ -39,10 +39,11 @@
       </section>
       <section id="main_section--login">
         <div id="section__div--logincadastro">
-          <button onclick="botaoAtivado('login')">Login</button>
-          <button onclick="botaoAtivado('cadastro')">Cadastro</button>
+          <button id="div--login">Login</button>
+          <button id="div--cadastro">Cadastro</button>
         </div>
-        <div id="form--cadastro">
+        <div id="form--cadastro" class="esconder">
+          <h2>Cadastro</h2>
           <form action="cadastro.php" method="POST" enctype="multipart/form-data">
             <div class="form--div">
               <label>Nome</label>
@@ -61,22 +62,23 @@
               <input type="file" name="image-upload" accept="image/*">
             </div>
             <div class="form--div">
-              <input type="submit" name="">
+              <input type="submit" name="enviar" >
             </div>
           </form>
         </div>
         <div id="form--login">
+          <h2>Login</h2>
           <form action="login.php" method="POST" enctype="multipart/form-data">
             <div class="form--div">
-              <label>Usuário</label>
+              <label>Usuário:</label>
               <input type="email" name="email">
             </div>
             <div class="form--div">
-              <label>Senha</label>
+              <label>Senha:</label>
               <input type="password" name="senha">
             </div>
             <div class="form--div">
-              <input type="submit" name="">
+              <input type="submit" name="enviar" id="validaForm">
             </div>
           </form>
         </div>
