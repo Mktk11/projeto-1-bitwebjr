@@ -1,17 +1,46 @@
 @import url("_basico.css");
 @import url("_dashboard.css");
 
-body{
-    margin: 0px;
-}
-main{
-    width: 100vh;
-}
 section{
-    grid-template-columns: auto auto auto auto auto;
-    height: 90vh;
+    width: 100vw;
 }
 .section__divprojetos{
-    background-color: lightgray;
-    width: 100%;
+    width: 90vw;
+}
+.inventario{
+    background-color: var(--inventario);
+}
+.juridico{
+    background-color: var(--juridico);
+}
+.outros{
+    background-color: var(--outros);
+}
+.contratos{
+    background-color: var(--contratos);
+}
+.tema--light .section__divprojetos span{
+    box-shadow: 2px 0 10px var(--mais-escuro);
+    border-radius: 8px;
+    color: black;
+}
+.tema--light .projetos{
+    box-shadow: 2px 0 10px var(--mais-escuro);
+}
+.projetos{
+    background-color: #FFF;
+    margin: 0px;
+    color: black;
+    height: 72vh;
+    border-radius: 8px;
+}
+.div--btn{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    justify-content: end;
+}
+.div--btn > button{
+    background-color: var(--claro);
+    border-radius: 8px;
 }

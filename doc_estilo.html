@@ -50,17 +50,44 @@
         </nav>
     </aside>
     <main class="">
-        <h1>Documentação</h1>
         <section>
+            <h1>Documentação</h1>
             <div class="section__divprojetos">
-                <span>Projetos</span>
-                <span>Projetos</span>
-                <span>Projetos</span>
-                <span>Projetos</span>
-                <span>Projetos</span>
-                <span>Projetos</span>
+                <span id="#projetos" class="projetos">Projetos</span>
+                <span id="#Inventario" class="inventario">Inventário</span>
+                <span id="#Contratos" class="contratos">Contratos</span>
+                <span id="Juridico" class="juridico">Juridico</span>
+                <span id="Outros" class="outros">Outros</span>
+            </div>
+            <div id="#projetos" class="projetos">
+                <div class="div--btn">
+                    <button>Filter</button>
+                    <button>Add</button>
+                </div>
             </div>
         </section>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="span__icon"><i class="fa-solid fa-house"></i></span>
+                    </a>
+                </li>
+                <li >
+                    <a href="doc.php">
+                        <span ><i class="fa-solid fa-folder"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="projetos.php">
+                        <span ><i class="fa-solid fa-file"></i></span>
+                    </a>
+                </li>
+                <li class="nav__imgperfil">
+                    <img src="?php echo $foto;?>" alt="perfil-usuario">
+                </li>
+            </ul>
+        </nav>
     </main>
 </body>
 </html>

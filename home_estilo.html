@@ -89,8 +89,8 @@ $user = $_SESSION['usuario_nome'] ?? "Usuário";
         </nav>
     </aside>
     <main class="">
-        <h1>Home</h1>
         <section>
+            <h1>Home</h1>
             <div class="section__divusuario">
                 <h2>Bem-vindo</h2>
                 <div>Olá, <span ><?php echo $user; ?></span></div>
@@ -138,6 +138,28 @@ $user = $_SESSION['usuario_nome'] ?? "Usuário";
                 <textarea placeholder="Digite suas notas aqui..."></textarea>
             </div>
 		</section>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="span__icon"><i class="fa-solid fa-house"></i></span>
+                    </a>
+                </li>
+                <li >
+                    <a href="doc.php">
+                        <span ><i class="fa-solid fa-folder"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="projetos.php">
+                        <span ><i class="fa-solid fa-file"></i></span>
+                    </a>
+                </li>
+                <li class="nav__imgperfil">
+                    <img src="?php echo $foto;?>" alt="perfil-usuario">
+                </li>
+            </ul>
+        </nav>
     </main>
 </body>
 </html>
