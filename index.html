@@ -8,78 +8,61 @@
     <script src="https://kit.fontawesome.com/9729da2774.js" crossorigin="anonymous"></script>
 
     <!-- Estilos -->
-
+    <link rel="stylesheet" type="text/css" href="css/_basico.css">
     <link rel="stylesheet" href="css/estilo.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Javascript -->
 
     <script src="js/scripts.js" defer></script>
 
   </head>
   <body class="tema--light">
-    <nav>
-      <div class="nav__container">
-        <a href="#">
-          <img src="imagens/logo.png" alt="BitwebJr">
-        </a>
-        <ul>
-          <li>
-            <input type="checkbox" name="change-theme" id="change-theme">
-            <label for="change-theme">
-              <i class="fa-solid fa-toggle-off"></i>
-              <i class="fa-solid fa-toggle-on"></i>
-            </label>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <header>
+      <nav>
+        <div class="nav__logo">
+          <a href="#">
+            <img src="imagens/logo.png" alt="BitwebJr">
+          </a>
+        </div>
+        <div class="nav__icones">
+          <ul>
+            <li>
+              <input type="checkbox" name="change-theme" id="change-theme">
+              <label for="change-theme">
+                <i class="fa-solid fa-toggle-off"></i>
+                <i class="fa-solid fa-toggle-on"></i>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <main>
-      <section id="main_section--img">
-        <img src="imagens/logo-bit-removebg.png">
-      </section>
-      <section id="main_section--login">
-        <div id="section__div--logincadastro">
-          <button id="div--login">Login</button>
-          <button id="div--cadastro">Cadastro</button>
+      <section class="main__sectionhero">
+        <div class="section--img">
+          <a href="#">
+            <img src="imagens/logo-bit-removebg.png" alt="Logo BitWeb">
+          </a>
         </div>
-        <div id="form--cadastro" class="esconder">
-          <h2>Cadastro</h2>
-          <form action="cadastro.php" method="POST" enctype="multipart/form-data">
-            <div class="form--div">
-              <label>Nome</label>
-              <input type="text" name="user">
-            </div>
-            <div class="form--div">
-              <label>Senha</label>
-              <input type="password" name="senha">
-            </div>
-            <div class="form--div">
-              <label>Email</label>
-              <input type="text" name="email">
-            </div>
-            <div class="form--div">
-              <label>Foto de perfil</label>
-              <input type="file" name="image-upload" accept="image/*">
-            </div>
-            <div class="form--div">
-              <input type="submit" name="enviar" >
-            </div>
+        <div class="section--form">
+          <div class="section--form_btn">
+            <button>Login</button>
+            <button>Cadastro</button>
+          </div>
+          <h2 class="form--login_h2">Login</h2>
+          <h2 class="form--cadastro_h2">Cadastro</h2>
+          <form method="POST" class="form--login">
+            <label for="user">Usuário:</label>
+            <input type="text" id="user" name="user" required>
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha">
+            <input type="submit" value="Entrar">
           </form>
-        </div>
-        <div id="form--login">
-          <h2>Login</h2>
-          <form action="login.php" method="POST" enctype="multipart/form-data">
-            <div class="form--div">
-              <label>Usuário:</label>
-              <input type="email" name="email">
-            </div>
-            <div class="form--div">
-              <label>Senha:</label>
-              <input type="password" name="senha">
-            </div>
-            <div class="form--div">
-              <input type="submit" name="enviar" id="validaForm">
-            </div>
+          <form method="POST" class="form--cadastro">
+            <label for="user">Usuário:</label>
+            <input type="text" id="user" name="user" required>
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha">
+            <input type="submit" value="Entrar">
           </form>
         </div>
       </section>

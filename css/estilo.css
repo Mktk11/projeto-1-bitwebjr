@@ -1,85 +1,181 @@
 @import url("_basico.css");
-
-html,body{
-    transition: 0.5s;
-    height: 100%;
+body{
+	overflow-y: hidden;
 }
 nav{
-    display: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 18px;
+	align-content: center;
 }
-main{
-    display: grid;
-    grid-template-columns: auto;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    height: 100vh;
-    border: 5px solid red;
+.tema--light nav{
+	box-shadow: 2px 0 10px var(--mais-escuro);
 }
-#main_section--img{
-    display: grid;
-    justify-content: center;
-    width: 100%;
-    height: 20vh;
-    border: 5px solid red;
+.tema--dark nav{
+	box-shadow: 2px 0 10px var(--mais-claro);
 }
-#main_section--img > img{
-    width: 120px;
+.nav__icones{
+	display: grid;
+	align-content: center;
 }
-#main_section--login{
-    height: 60vh;
-    width: 70vw;
-    text-transform: uppercase;
+li{
+	list-style: none;
 }
-#section__div--logincadastro{
-    border: 5px solid red;
+.nav__logo > a > img{
+	width: 180px;
 }
-#div--login,#div--cadastro{
-    border: 5px solid red;
-    border-radius: 8px;
-    background-color: greenyellow;
+.tema--dark .fa-toggle-off{
+	display: none;
 }
-#main_section--login{
-    display: grid;
-    border: 5px solid red;
-    text-align: center;
-    color: black;
-    background-color: lightgray;
+.tema--dark .fa-toggle-on{
+	display: block;
 }
-#form--login,#form--cadastro{
-    border: 5px solid red;
-    height: 50vh;
-    margin: 0px auto;
-    width: 50vw;
+.tema--light .fa-toggle-off{
+	display: block;
+}
+.tema--light .fa-toggle-on{
+	display: none;
+}
+i{
+	font-size: 1.8rem;
+}
+.main__sectionhero{
+	display: grid;
+	height: 89vh;
+	align-content: center;
+	padding: 18px;	
+}
+.section--img{
+	display: none;
+}
+.section--form{
+	background: linear-gradient(180deg,var(--claro),var(--mais-claro), lightblue );
+	color: black;
+	backdrop-filter: blur(150px);
+	min-height: 300px;
+	padding: 24px;
+	border-radius: 50px;
+	box-shadow: 2px 0 10px var(--mais-escuro);
+}
+.tema--dark .section--form{
+	box-shadow: 2px 0 10px var(--mais-claro);
+	background: linear-gradient(180deg,darkblue,var(--mais-escuro),var(--escuro));
+	color: #FFF;
+}
+.section--form > h2{
+	text-align: center;
+	font-size: 2.5rem;
+}
+.form--cadastro{
+	display: none;
+}
+.form--cadastro_h2{
+	display: none;
+}
+.section--form_btn{
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 8px;
+	justify-content: end;
+	padding: 8px;
+}
+.section--form_btn > button{
+	font-size: 1.2rem;
+	font-weight: bolder;
+	background-color: var(--cor-botão);
+	border-radius: 50px;
+	padding: 8px;
+	cursor: pointer;
+	border: none;
+}
+.section--form_btn > button:hover{
+	background-color: black;
+	color: var(--cor-botão);
+}
+.tema--dark .section--form_btn > button{
+	color: #FFF;
+}
+.tema--dark .section--form_btn > button:hover{
+	background-color: #FFF;
+	color: var(--cor-botão);
 }
 form{
-    margin: 0px auto;
-}
-#form--login > h2{
-    font-size: 2rem;
-}
-#form--cadastro > h2{
-    font-size: 2rem;
+	display: flex;
+	flex-direction: column;
+	padding: 32px;
 }
 label{
-    justify-self: start;
+	margin-top: 24px;
+	font-size: 1.2rem;
+	font-weight: bolder;
 }
-.form--div{
-    display: grid;
-    grid-template-columns: auto;
-    padding-bottom: 30px;
-    border-radius: 8px;
+input{
+	border-radius: 50px;
+	height: 40px;
+	padding: 0 12px;
+	border: none;
 }
-.esconder{
-    display: none;
+input[type="submit"]{
+	margin-top: 56px;
+	width: 100%;
+	max-width: 200px;
+	background-color: var(--cor-botão);
+	color: black;
+	font-size: 1.2rem;
+	font-weight: bolder;
+	border: none;
+	cursor: pointer;
 }
-.form--div > input{
-    border-radius: 8px;
+input[type="submit"]:hover{
+	background-color: black;
+	color: var(--cor-botão);
 }
-.form--div > input[type="submit"]{
-    background-color: greenyellow;
+.tema--dark input[type="submit"]{
+	color: #FFF;
 }
-#form--login > form > .form--div > input[type="submit"]{
-    background-color: greenyellow;
-    margin-top: 100px;
+.tema--dark input[type="submit"]:hover{
+	background-color: #FFF;
+	color: var(--cor-botão);
+}
+input:focus{
+	outline: 2px solid var(--escuro);
+}
+input[type="submit"]:active{
+	transform: scale(0.98);
+}
+@media (min-width: 576px){
+	.main__sectionhero{
+		justify-content: center;
+	}
+	.section--form{
+		width: 75vw;
+	}
+}
+@media (min-width: 768px){
+	.main__sectionhero{
+		grid-template-columns: auto auto;
+		gap: 20px;
+	}
+	.section--form{
+		width: 50vw;
+	}
+	.section--img{
+		display: grid;
+		justify-content: center;
+	}
+}
+@media (min-width: 992px){
+	.section--form{
+		width: 40vw;
+	}
+	.main__sectionhero{
+		justify-content: center;
+		align-content: center;
+		gap: 150px;
+	}
+}
+@media (min-width: 1200px){
+	.section--form{
+		width: 30vw;
+	}
 }

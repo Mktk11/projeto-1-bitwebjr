@@ -22,6 +22,9 @@ html{
     background: linear-gradient(180deg,darkblue,var(--mais-escuro),var(--escuro));
     box-shadow: 2px 0 10px var(--mais-claro);
 }
+li{
+    list-style: none;
+}
 input[type="checkbox"]{
     display: none;
 }
