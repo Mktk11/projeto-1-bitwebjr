@@ -1,4 +1,26 @@
 <?php
+    
+    session_start();
+
+    $usuarios_autenticados = false;
+
+    $usuarios_servidor = array(array('email'=>'adm@teste.com.br','senha'=>'123456789'),array('email'=>'user@teste.com.br','senha'=>'abcd'));
+
+    foreach ($usuarios_servidor as $user) {
+        if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']){
+            $usuarios_autenticados = true;
+        }
+    }
+    if ($usuarios_autenticados) {
+        $_SESSION['autenticado'] = "SIM";
+        header('Location: home.php');
+    }else{
+        $_SESSION['autenticado'] = "NAO";
+        header('Location: index.php?login=erro');
+    }
+
+/* Acesso ao banco de dados 
+
 require("cadastro.php"); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -30,5 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch(PDOException $e) {
         echo "Erro no login: " . $e->getMessage();
     }
+
 }
+
+*/
+?>
+
 

@@ -6,6 +6,7 @@ section{
 }
 .section__divprojetos{
     width: 90vw;
+    position: absolute;
 }
 .inventario{
     background-color: var(--inventario);
@@ -27,20 +28,29 @@ section{
 .tema--light .projetos{
     box-shadow: 2px 0 10px var(--mais-escuro);
 }
+.tema--dark .section__divprojetos span{
+    box-shadow: 2px 0 10px var(--mais-claro);
+    border-radius: 8px;
+    color: black;
+}
+.tema--dark .projetos{
+    box-shadow: 2px 0 10px var(--mais-escuro);
+}
+.section__divprojetos > span{
+    cursor: pointer;
+}
 .projetos{
     background-color: #FFF;
-    margin: 0px;
+    margin-top: 30px;
     color: black;
     height: 72vh;
     border-radius: 8px;
 }
-.div--btn{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 5px;
-    justify-content: end;
-}
-.div--btn > button{
-    background-color: var(--claro);
-    border-radius: 8px;
+@media (min-width: 768px){
+    .projetos{
+        max-width: 80vw;
+    }
+    section{
+        padding-left: 25px;
+    }
 }

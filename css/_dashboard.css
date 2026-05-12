@@ -21,6 +21,33 @@ body {
     flex-direction: column;
     font-size: 1.5rem;
 }
+.body__aside{
+    display: flex;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+.tema--dark nav{
+    box-shadow: 2px 0 10px var(--mais-claro);
+}
+.nav--img{
+    display: none;
+}
+.nav__logo > ul{
+    display: flex;
+    justify-content: space-between;
+}
+.nav__logo > ul > li{
+    padding: 30px;
+}
+.span__txt--link{
+    display: none;
+}
+.nav__icones > ul > li{
+    padding: 30px;
+}
 main{
     width: 100%;
     height: 100vh;
@@ -28,9 +55,9 @@ main{
     justify-content: center;
 }
 section{
-    padding: 10px;
+    padding: 15px;
 }
-section > div{
+section > div > div{
     margin-top: 20px;
     padding: 5px;
 }
@@ -42,11 +69,87 @@ section > div{
     grid-template-columns: auto auto auto auto auto;
     justify-content: space-between;
 }
-.nav__imgperfil{
+.div--imgperfil{
     outline: 2px solid blue;
     border-radius: 50%;
+}
+.div--imgperfil{
+    width: 100px;
+    height: 100px;
 }
 .tema--light nav > ul > li{
     list-style: none;
     padding: 30px;
+}
+.nav__logo > ul > li:hover{
+    background-color: var(--mais-escuro);
+}
+.tema--dark .nav__logo > ul > li:hover{
+    background-color: var(--mais-claro);
+}
+.div--btn{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    justify-content: end;
+}
+.div--btn > button{
+    background-color: var(--claro);
+    border-radius: 8px;
+    width: 80px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px){
+    section{
+        padding-top: 80px;
+    }
+    body{
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 0px;
+        margin: 0px;
+    }
+    nav{
+        flex-direction: column;
+        max-width: 102px;
+        height: 100vh;
+    }
+    .nav__logo > ul{
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+}
+@media (min-width: 992px){
+    .nav--img > img{
+        max-width: 150px;
+    }
+    .nav__logo{
+        height: 90vh;
+    }
+    .nav--img{
+        display: grid;
+        justify-content: center;
+    }
+    nav{
+        max-width: 200px;
+    }
+    .span__txt--link{
+        display: block;
+    }
+    .nav__imgperfil{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .div--imgperfil{
+
+    }
+    li > a{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 5px;
+        text-decoration: none;
+    } 
 }

@@ -14,6 +14,21 @@ html{
     --mais-escuro:hsl(240, 94%, 31%);
     --mais-claro:hsl(200, 89%, 70%);
 }
+.tema--dark .fa-toggle-off{
+    display: none;
+}
+.tema--dark .fa-toggle-on{
+    display: block;
+}
+.tema--light .fa-toggle-off{
+    display: block;
+}
+.tema--light .fa-toggle-on{
+    display: none;
+}
+i{
+    font-size: 1.8rem;
+}
 .tema--light{
     background: linear-gradient(180deg,var(--claro),var(--mais-claro), lightblue );
     box-shadow: 2px 0 10px var(--mais-escuro);

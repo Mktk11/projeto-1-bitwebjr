@@ -24,21 +24,6 @@ li{
 .nav__logo > a > img{
 	width: 180px;
 }
-.tema--dark .fa-toggle-off{
-	display: none;
-}
-.tema--dark .fa-toggle-on{
-	display: block;
-}
-.tema--light .fa-toggle-off{
-	display: block;
-}
-.tema--light .fa-toggle-on{
-	display: none;
-}
-i{
-	font-size: 1.8rem;
-}
 .main__sectionhero{
 	display: grid;
 	height: 89vh;
@@ -66,11 +51,8 @@ i{
 	text-align: center;
 	font-size: 2.5rem;
 }
-.form--cadastro{
-	display: none;
-}
-.form--cadastro_h2{
-	display: none;
+.hidden {
+  display: none;
 }
 .section--form_btn{
 	display: grid;
@@ -143,6 +125,12 @@ input:focus{
 input[type="submit"]:active{
 	transform: scale(0.98);
 }
+input[type="file"]{
+	box-shadow: 2px 0 5px var(--mais-escuro);
+}
+.tema--dark input[type="file"]{
+	box-shadow: 2px 0 5px var(--mais-claro);
+}
 @media (min-width: 576px){
 	.main__sectionhero{
 		justify-content: center;
@@ -178,4 +166,57 @@ input[type="submit"]:active{
 	.section--form{
 		width: 30vw;
 	}
+}
+
+/* Landscape da página */
+
+@media (orientation: landscape) and (max-height: 500px) {
+    body {
+        /* Libera o scroll*/
+        overflow-y: auto; 
+    }
+
+    .main__sectionhero {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 18px; 
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .section--form {
+        width: 90% !important;
+        padding: 15px;
+        border-radius: 20px; 
+    }
+
+    .section--form > h2 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    label {
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+    input {
+        height: 35px; 
+    }
+
+    input[type="submit"] {
+        margin-top: 20px;
+    }
+
+    .section--img {
+        display: grid;
+        align-content: center;
+    }
+
+    .section--img img {
+        max-width: 150px; 
+    }
 }

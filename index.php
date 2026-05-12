@@ -14,7 +14,13 @@
     <!-- Javascript -->
 
     <script src="js/scripts.js" defer></script>
-
+    <style>
+      .mensagem-erro{
+        text-align: center;
+        font-size: 1.2rem;
+        color: red;
+      }
+    </style>
   </head>
   <body class="tema--light">
     <header>
@@ -46,24 +52,35 @@
         </div>
         <div class="section--form">
           <div class="section--form_btn">
-            <button>Login</button>
-            <button>Cadastro</button>
+            <button id="btn--login">Login</button>
+            <button id="btn--cadastro">Cadastro</button>
           </div>
           <h2 class="form--login_h2">Login</h2>
-          <h2 class="form--cadastro_h2">Cadastro</h2>
-          <form method="POST" class="form--login">
-            <label for="user">Usuário:</label>
-            <input type="text" id="user" name="user" required>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha">
+          <h2 class="form--cadastro_h2 hidden">Cadastro</h2>
+          <form method="POST" action="login.php" class="form--login" enctype="multipart/form-data">
+            <label for="login-user">Usuário:</label>
+            <input type="text" id="login-user" name="email" required>
+            <label for="login-senha">Senha:</label>
+            <input type="password" id="login-senha" name="senha" required>
+            <?php
+              if(isset($_GET['login']) && $_GET['login'] == "erro"){
+            ?>
+              <div class ="mensagem-erro">
+                Usuários ou senha inválidos
+              </div>
+            <?php   
+              }
+            ?>
             <input type="submit" value="Entrar">
           </form>
-          <form method="POST" class="form--cadastro">
-            <label for="user">Usuário:</label>
-            <input type="text" id="user" name="user" required>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha">
-            <input type="submit" value="Entrar">
+          <form method="POST" action="cadastrar.php" class="form--cadastro hidden" enctype="multipart/form-data">
+            <label for="cad-user">Usuário:</label>
+            <input type="text" id="cad-user" name="user" required>
+            <label for="cad-senha">Senha:</label>
+            <input type="password" id="cad-senha" name="senha" required>
+            <label for="cad-imagem">Imagem de perfil:</label>
+            <input type="file" alt="Enviar" name="image-user" src="imagens/import.svg">
+            <input type="submit" value="Cadastrar">
           </form>
         </div>
       </section>

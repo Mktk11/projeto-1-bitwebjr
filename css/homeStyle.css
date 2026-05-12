@@ -1,7 +1,7 @@
 @import url("_basico.css");
 @import url("_dashboard.css");
 
-section > .section__divprojetos > ul > li > img{
+section > div > .section__divprojetos > ul > li > img{
     width: 20px;
 }
 .section__divprojetos > ul > li{
@@ -23,22 +23,32 @@ section > .section__divprojetos > ul > li > img{
 .section__blocodenotas{
     width: 100%;
 }
-.tema--light #section__divcalendario{
-    box-shadow: 2px 0 10px var(--mais-escuro);
-    border-radius: 12px;
-}
-.tema--light .section__blocodenotas{
-    box-shadow: 2px 0 10px var(--mais-escuro);
-    border-radius: 12px;
-}
-.tema--light .section__divusuario{
-    box-shadow: 2px 0 10px var(--mais-escuro);
-    border-radius: 12px;
-}
+.tema--light #section__divcalendario,
+.tema--light .section__blocodenotas,
+.tema--light .section__divusuario,
 .tema--light .section__divprojetos{
     box-shadow: 2px 0 10px var(--mais-escuro);
     border-radius: 12px;
 }
+.tema--dark #section__divcalendario,
+.tema--dark .section__blocodenotas,
+.tema--dark .section__divusuario,
+.tema--dark .section__divprojetos{
+    box-shadow: 2px 0 10px var(--mais-claro);
+    border-radius: 12px;
+}
 #div__navmobile{
     background-color: #FFF;
+}
+td{
+    border: 1px solid #FFF;
+    text-align: center;
+    padding: 5px;
+}
+@media (min-width: 992px){
+    section > div{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 15px;
+    }
 }
