@@ -45,6 +45,10 @@ td{
     text-align: center;
     padding: 5px;
 }
+textarea{
+    color: black;
+}
+
 @media (min-width: 992px){
     section > div{
         display: grid;

@@ -20,6 +20,10 @@
         font-size: 1.2rem;
         color: red;
       }
+      .mensagem-saida{
+        text-align: center;
+        font-size: 1.2rem;
+      }
     </style>
   </head>
   <body class="tema--light">
@@ -45,12 +49,12 @@
     </header>
     <main>
       <section class="main__sectionhero">
-        <div class="section--img">
+        <figure class="section--img">
           <a href="#">
             <img src="imagens/logo-bit-removebg.png" alt="Logo BitWeb">
           </a>
-        </div>
-        <div class="section--form">
+        </figure>
+        <article class="section--form">
           <div class="section--form_btn">
             <button id="btn--login">Login</button>
             <button id="btn--cadastro">Cadastro</button>
@@ -65,10 +69,19 @@
             <?php
               if(isset($_GET['login']) && $_GET['login'] == "erro"){
             ?>
-              <div class ="mensagem-erro">
+              <p class ="mensagem-erro">
                 Usuários ou senha inválidos
-              </div>
+              </p>
             <?php   
+              }
+            ?>
+            <?php
+              if(isset($_GET['login']) && $_GET['login'] == "sai"){
+            ?>
+              <p class="mensagem-saida">
+                O usuário saiu do sistema
+              </p>
+            <?php
               }
             ?>
             <input type="submit" value="Entrar">
@@ -82,7 +95,7 @@
             <input type="file" alt="Enviar" name="image-user" src="imagens/import.svg">
             <input type="submit" value="Cadastrar">
           </form>
-        </div>
+        </article>
       </section>
     </main>
   </body>

@@ -1,5 +1,5 @@
 <?php
-    require_once("valida_acesso.php");
+    /*require_once("login.php");*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -38,7 +38,7 @@
                             <span class="span__txt--link">Home</span>
                         </a>
                     </li>
-                    <li >
+                    <li>
                         <a href="doc.php">
                             <span ><i class="fa-solid fa-folder"></i></span>
                             <span class="span__txt--link">Documentos</span>
@@ -57,7 +57,12 @@
                     <img src="?php echo $foto;?>" alt="perfil-usuario">
                     <p>perfil</p>
                 </div>
-                
+                <ul>
+                    <li>
+                        <a href="logoff.php">Sair</a>
+                    </li>
+                </ul>
+                    
             </div>
         </nav>
     </aside>
@@ -109,6 +114,11 @@
                 </div>
                 <div class="section__blocodenotas">
                     <h2>Bloco de Notas</h2>
+                    <form method="POST" action="registra_descricao.php">
+                        <label>Descrição</label>
+                        <textarea name="descricao"></textarea>
+                        <button type="submit">ENVIAR</button>
+                    </form>
                 </div>
             </div>
         </section>

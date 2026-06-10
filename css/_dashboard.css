@@ -141,10 +141,8 @@ section > div > div{
     .nav__imgperfil{
         width: 100%;
         display: flex;
-        justify-content: center;
-    }
-    .div--imgperfil{
-
+        flex-direction: column;
+        justify-self: center;
     }
     li > a{
         display: grid;

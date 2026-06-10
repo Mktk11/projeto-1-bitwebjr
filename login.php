@@ -1,5 +1,20 @@
 <?php
     
+    require('conexao.php');
+
+    $tabela = "SELECT * FROM usuario";
+    $executar = pg_query($conexao, $tabela);
+
+    while ($linha = pg_fetch_assoc($executar)) {
+        if ($linha['email']==$_POST['email'] && $linha['senha']==$_POST['senha']) {
+            header('Location:home.php');
+        }
+    }
+
+
+
+/*
+    // Analisando os usuario HARD-CODE 
     session_start();
 
     $usuarios_autenticados = false;
@@ -18,6 +33,8 @@
         $_SESSION['autenticado'] = "NAO";
         header('Location: index.php?login=erro');
     }
+
+*/
 
 /* Acesso ao banco de dados 
 
